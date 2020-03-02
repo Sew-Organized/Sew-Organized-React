@@ -9,6 +9,7 @@ export default class Detail extends Component {
         const data = await getFloss(this.props.match.params.id);
         if (data.body) {
             this.setState({ floss: data.body })
+            // may be [0] (if array of objects)
         }
     }
     render() {

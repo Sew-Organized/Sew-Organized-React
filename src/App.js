@@ -19,13 +19,13 @@ export default class App extends Component {
         <Router>
           <Header />
           <Switch>
-            <Route path='/' render={() => 
+            <Route exact path='/' render={() => 
               isLoggedIn()
                 ? <Stash />
                 : <Redirect to='/splash' />
             } />
             <Route path='/splash' component={Splash} />
-            <Route exact path='/About/' Component={About} />
+            <Route path='/About' component={About} />
             <Route />
             <Route />
             <Route />
