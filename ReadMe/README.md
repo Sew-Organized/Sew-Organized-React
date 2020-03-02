@@ -65,8 +65,12 @@ Mobster (app to tell you)
 * First time user
   * Header
     * Instructions
-    * Search bar 
-      * Sort
+  * Search bar 
+    * Search by:
+      * DMC #
+      * Color name
+      * Color family (stretch)
+    * Sort
   * List page
     * Color cards (all)
     * Pagination
