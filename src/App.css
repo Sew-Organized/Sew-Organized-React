@@ -1,1 +1,58 @@
 
+/* Header Section */
+.header {
+    margin-left: 1.25em;
+}
+
+
+/* About Devs Section */
+.aboutUL {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.aboutLI {
+    margin: 0.50em;
+    padding: 0.50em;
+    padding-top: 1.25em;
+    height: 200px;
+    width: 150px;
+    font-size: 14px;
+}
+
+.aboutText {
+    word-wrap: wrap;
+    height: 80px;
+    width: 150px;
+    font-size: 14px;
+    margin: 0.50em;
+    padding: 0.50em;
+    border: solid black 
+}
+
+#aboutDevs {
+    margin-left: 3.5em;
+    font-style: italic;
+}
+
+#aboutChelsea {
+    background-color: #FF6224;
+}
+
+#aboutDannie {
+    background-color: #32CD32;
+}
+
+#aboutJenna {
+    background-color: #CBFFE5;
+}
+
+#aboutJanelle {
+    background-color: #A18982;
+}
+
+#aboutDakota {
+    background-color: rgb(138, 19, 91);
+}
