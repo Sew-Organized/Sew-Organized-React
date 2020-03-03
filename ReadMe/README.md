@@ -12,12 +12,10 @@
 * Clearly defined database schemas
 
 
-
 ## Project: Sew Organized
 ## Team
 * Chelsea
 * Janelle 
-* Erin
 * Dakota
 * Jenna 
 * Dannie
@@ -57,6 +55,22 @@
 * Diagram (make tickets)
 Mobster (app to tell you)
 
+## MVP
+* User/Auth
+* Color API
+  * Save palettes
+* User's stash
+  * Update and delete
+* About page
+
+**Stretch**
+* Suggest similar colors
+* Search
+* Shopping list (button on color card)
+* Link to purchase (ecommerce website)
+* Upload profile photo on login page
+  
+
 ## Front End
 * User login page
   * Get token
@@ -65,11 +79,11 @@ Mobster (app to tell you)
 * First time user
   * Header
     * Instructions
-  * Search bar 
+  * Search bar (stretch)
     * Search by:
       * DMC #
       * Color name
-      * Color family (stretch)
+      * Color family
     * Sort
   * List page
     * Color cards (all)
@@ -92,14 +106,6 @@ Mobster (app to tell you)
     * Checkbox for partial skein
     * Number owned
 * About us
-
-**Stretch**
-* Saved projects
-* Color palettes
-* Shopping list (button on color card)
-* Link to purchase (ecommerce website)
-* Upload profile photo on login page
-
 
 ## Back End
 CrossStitchCreator table: https://github.com/adrianj/CrossStitchCreator/blob/master/CrossStitchCreator/Resources/DMC%20Cotton%20Floss%20converted%20to%20RGB%20Values.csv
