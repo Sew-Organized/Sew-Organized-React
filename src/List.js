@@ -22,6 +22,7 @@ export default class List extends Component {
                 <ul className='flossContainer'>
                 { this.props.flosses.map(floss => 
                     <Link to={`Detail/${floss.id}`}>
+                        {/* just the color name be the link */}
                         <Floss floss={floss} />
                     </Link>) }
                 </ul>

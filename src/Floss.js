@@ -36,22 +36,9 @@ export default class Floss extends Component {
                         <option value='6'> 5+ </option>
                     </select>
 
-                    {/* <input type='checkbox' id='partial' value='partial'></input>
-                    <label for='partial'>Partial Skein: </label> */}
-
                 </li>
             </div>
         )
     }
 }
 
-//from get(route) data
-// Color name
-// dmc number
-// image
-
-
-// in state (user object)
-// owned dropdown with numbers
-// buy dropdown with numbers
-// partial checkbox

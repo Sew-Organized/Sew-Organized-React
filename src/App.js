@@ -34,8 +34,8 @@ export default class App extends Component {
             <Route path='/login' component={LogIn} />
             <Route path='/colors' component={Colors} />
             <Route path='/user/stash' component={Stash} />
+            {/* talked about changing this route to the username dynamically */}
           </Switch>
-
         </Router>
       </div>
     )
