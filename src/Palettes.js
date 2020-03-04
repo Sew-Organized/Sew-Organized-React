@@ -53,7 +53,6 @@ export default class Palettes extends Component {
         })
 
         this.setState({ matchedDMCObjects });
-
     }
 
     // does color math, and is called in matchDMC
