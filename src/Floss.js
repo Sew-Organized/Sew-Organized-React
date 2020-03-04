@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 
 export default class Floss extends Component {
@@ -13,7 +14,9 @@ export default class Floss extends Component {
         return (
             <div>
                 <li className='flossBox'>
+                    <Link to={`Detail/${floss.id}`}>
                     <h3>{ description }</h3>
+                        </Link>
                     <h3>{ id }</h3>
                     <div>
                         <div className='hexContainer' style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 

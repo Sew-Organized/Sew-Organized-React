@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import request from 'superagent';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Floss from './Floss.js';
 
 export default class List extends Component {
@@ -21,14 +21,19 @@ export default class List extends Component {
             <div>
                 <ul className='flossContainer'>
                 { this.props.flosses.map(floss => 
-                    <Link to={`Detail/${floss.id}`}>
-                        {/* just the color name be the link */}
+                    
                         <Floss floss={floss} />
-                    </Link>) }
+                    ) }
                 </ul>
             </div>
         )
     }
 }
+
+// { this.props.flosses.map(floss => 
+//     <Link to={`Detail/${floss.id}`}>
+//         <Floss floss={floss} />
+//     </Link>) }
+
 
 //map through the flosses data so that each are perscriped a container
