@@ -29,7 +29,38 @@ export default class Palettes extends Component {
         console.log(this.state);
     };
 
+    transformPaletteData = () => {
+        // turns dmc colors data into arrays for compatibility reasons
+        const dmcColorList = this.state.dmcData.map(color => Object.values(color));
+        console.log(dmcColorList);
+
+        const distanceFromColor = (idx, r, g, b) => {
+            const tr = dmcColorList[idx][2];
+            const tg = dmcColorList[idx][3];
+            const tb = dmcColorList[idx][4];
+            const baseDistance = ((r - tr) * (r - tr)) + ((g - tg) * (g - tg)) + ((b - tb) * (b - tb));
+            const distance = Math.sqrt(baseDistance);
+            return distance;
+        }
     
+        const matchDMC = (rgbRed, rgbGreen, rgbBlue) => {
+            const distanceList = [];
+            for (let i = 0; i < dmcColorList.length; i++) {
+                const candidateDist = distanceFromColor(i, rgbRed, rgbGreen, rgbBlue);
+                distanceList[i] = [candidateDist, i];
+            }
+            // sort the list in ascending order
+            distanceList.sort(function(a, b){return a[0]-b[0]});
+            // Get the values that are closest to the RGB value
+            const dmcI = dmcColorList[distanceList[0][1]][0];
+            const dmcR = dmcColorList[distanceList[0][1]][2];
+            const dmcG = dmcColorList[distanceList[0][1]][3];
+            const dmcB = dmcColorList[distanceList[0][1]][4];
+            return (`ID: ${dmcI}, RGB: ${dmcR}, ${dmcG}, ${dmcB}`);
+        }
+    };
+
+
 
     // handleInput();
 
@@ -41,6 +72,7 @@ export default class Palettes extends Component {
     render() {
         return (
             <div>
+                <button onClick={this.transformPaletteData}>TEST BUTTON</button>
                 <p>Looking for color inspiration? Click the button to generate a palette of floss colors to spark your next project idea.</p>
                 <button onClick={this.generateApiColors}>Generate Color Palette</button>
                 <div>
