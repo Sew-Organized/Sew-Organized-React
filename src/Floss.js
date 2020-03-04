@@ -5,23 +5,27 @@ import request from 'superagent'
 
 export default class Floss extends Component {
     state = {
-        floss: [],
+        quantityInput: '',
     }
 
+    //  callback that touches parent state
     handleAddStash = async (e) => {
         e.preventDefault();
+        const user = JSON.parse(localStorage.getItem('user'));
         
         const myStash = {
-            dmcId: this.state.floss.id,
+            dmcId: this.props.floss.id,
             quantity: this.state.quantityInput
         };
 
-        const newMyStash = [...this.state.floss, myStash];
+        // const newMyStash = [...this.props.allStashFlosses, myStash];
 
-        this.setState({ flosses: newMyStash });
-    
+        // this.setState({ flosses: newMyStash });
+
+        this.props.setStash(myStash);
+        
         const stash = await request.post(`https://mighty-mesa-93390.herokuapp.com/api/username/stash`, {
-            quantity: this.state.quantityInput });
+            quantity: this.state.quantityInput }).set('Authorization', user.token);
     
         // maybe need to add auth 
     }
@@ -33,7 +37,6 @@ export default class Floss extends Component {
             id,
             hex, 
         } = floss;
-        console.log(hex);
         return (
             <div>
                 <li className='flossBox'>
@@ -46,7 +49,7 @@ export default class Floss extends Component {
                     </div>
 {/* Write a function to post api/username/stash/id to update quantity*/}
                     <label for='owned'>Skeins Owned: </label>
-                    <select id='owned'>
+                    <select id='owned' onChange={(e) => this.setState({ quantityInput: e.target.value})}>
 {/* Write a function to remove from stash if value=0 */}
                         <option value='0'> 0 </option>
                         <option value='0.5'> 0.5 </option>
@@ -55,7 +58,7 @@ export default class Floss extends Component {
                         <option value='2'> 2 </option>
                         <option value='2.5'> 2.5 </option>
                         <option value='3'> 3 </option>
-                        <option value='.5'> 3.5 </option>
+                        <option value='3.5'> 3.5 </option>
                         <option value='4'> 4 </option>
                         <option value='4.5'> 4.5 </option>
                         <option value='5'> 5 </option>

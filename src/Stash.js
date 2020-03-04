@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import List from 'react'
+// import List from 'react'
 import request from 'superagent'
 
 export default class Stash extends Component {
@@ -14,12 +14,12 @@ export default class Stash extends Component {
         `).set('Authorization', user.token);
         console.log('data:', data);
         // double check data format that sets state
-        this.setState({ flosses: data.body })
-    }
+        this.setState({ flosses: data.body })}
+    
     render() {
         return (
             <div>
-                <List flosses={this.state.flosses} />
+                {/* <List flosses={this.state.flosses} /> */}
             </div>
         )
     }

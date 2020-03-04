@@ -4,24 +4,16 @@ import React, { Component } from 'react'
 import Floss from './Floss.js';
 
 export default class List extends Component {
-    // state for the array of flosses to be posted to page
-    // state = {
-    //     flosses: [],
-    // }
+  render() {
 
-    // async componentDidMount() {
-    //     // put in api request link for rendering data
-    //     const data = await request.get(`${this}`)
-    //     // double check data format that sets state
-    //     this.setState({ flosses: data.body })
-    // }
-
-    render() {
+    console.log(this.props, 'this is list.js') 
         return (
             <div>
                 <ul className='flossContainer'>
                 { this.props.flosses.map(floss => 
-                    <Floss floss={floss} />
+                    <Floss floss={floss} setStash={this.props.handleClick} {...this.props}/>
+                    // ..this.props passes everything from colors to floss
+                    // this means that everything that colors passed to list is accessable to floss ie allowing for favorites to be possible
                 ) }
                 </ul>
             </div>
@@ -29,10 +21,3 @@ export default class List extends Component {
     }
 }
 
-// { this.props.flosses.map(floss => 
-//     <Link to={`Detail/${floss.id}`}>
-//         <Floss floss={floss} />
-//     </Link>) }
-
-
-//map through the flosses data so that each are perscriped a container
