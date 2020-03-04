@@ -41,7 +41,6 @@ export default class Palettes extends Component {
 
     };
 
-
     // take the array of objects returned by generateApiColors,
     dmcMatches = () => {
         const matchedDMCIds = this.state.randomPalette.map(object => {
@@ -93,20 +92,6 @@ export default class Palettes extends Component {
             } 
         }
     };
-
-
-
-
-
-
-
-
-    // handleInput();
-
-    // savePalette();
-
-
-// map over results of that function and return a div with background color of each color
 
     render() {
         return (
