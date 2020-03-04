@@ -11,7 +11,8 @@ import Stash from './Stash.js';
 import Splash from './Splash.js';
 import SignUp from './SignUp.js';
 import LogIn from './LogIn.js';
-import List from './List.js';
+// import List from './List.js';
+import Colors from './Colors.js';
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user'));
 
@@ -31,7 +32,7 @@ export default class App extends Component {
             <Route path='/about' component={About} />
             <Route path='/signup' component={SignUp} />
             <Route path='/login' component={LogIn} />
-            <Route path='/colors' component={List} />
+            <Route path='/colors' component={Colors} />
             <Route path='/user/stash' component={Stash} />
           </Switch>
         </Router>

@@ -16,9 +16,12 @@ export default class Floss extends Component {
                     <div className='hexContainer'>
                         <div style={{backgroundColor: { hex }}}></div> 
                     </div>
-
+{/* Write a function to post api/username/stash/id to update quantity*/}
                     <label for='owned'>Skeins Owned: </label>
                     <select id='owned'>
+{/* Write a function to remove from stash if value=0 */}
+                        <option value='0'> 0 </option>
+                        <option value='0.5'> 0.5 </option>
                         <option value='1'> 1 </option>
                         <option value='1.5'> 1.5 </option>
                         <option value='2'> 2 </option>

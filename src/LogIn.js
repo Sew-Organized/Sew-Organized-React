@@ -9,7 +9,8 @@ export default class LogIn extends Component {
         username: ''
     }
     
-    handleLogIn = async () => {
+    handleLogIn = async (e) => {
+        e.preventDefault();
         const logIn = await request.post(`https://mighty-mesa-93390.herokuapp.com/api/auth/login`, {
             email: this.state.email,
             password: this.state.password,
