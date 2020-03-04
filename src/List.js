@@ -20,7 +20,7 @@ export default class List extends Component {
         return (
             <div>
                 <ul className='flossContainer'>
-                { this.state.flosses.map(floss => 
+                { this.props.flosses.map(floss => 
                     <Link to={`Detail/${floss.id}`}>
                         <Floss floss={floss} />
                     </Link>) }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 export default class Floss extends Component {
     render() {
         const { floss } = this.props;
@@ -8,13 +9,14 @@ export default class Floss extends Component {
             id,
             hex, 
         } = floss;
+        console.log(hex);
         return (
             <div>
                 <li className='flossBox'>
                     <h3>{ description }</h3>
                     <h3>{ id }</h3>
-                    <div className='hexContainer'>
-                        <div style={{backgroundColor: { hex }}}></div> 
+                    <div>
+                        <div className='hexContainer' style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 
                     </div>
 {/* Write a function to post api/username/stash/id to update quantity*/}
                     <label for='owned'>Skeins Owned: </label>

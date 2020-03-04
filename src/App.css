@@ -56,3 +56,20 @@
 #aboutDakota {
     background-color: rgb(138, 19, 91);
 }
+
+.flossBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: solid 3px;
+    list-style-type: none;
+    width: 20%;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+
+.hexContainer {
+    width: 100px;
+    height: 100px; 
+}
