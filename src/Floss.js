@@ -1,8 +1,31 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import request from 'superagent'
 
 
 export default class Floss extends Component {
+    state = {
+        floss: [],
+    }
+
+    handleAddStash = async (e) => {
+        e.preventDefault();
+        
+        const myStash = {
+            dmcId: this.state.floss.id,
+            quantity: this.state.quantityInput
+        };
+
+        const newMyStash = [...this.state.floss, myStash];
+
+        this.setState({ flosses: newMyStash });
+    
+        const stash = await request.post(`https://mighty-mesa-93390.herokuapp.com/api/username/stash`, {
+            quantity: this.state.quantityInput });
+    
+        // maybe need to add auth 
+    }
+
     render() {
         const { floss } = this.props;
         const {
@@ -38,10 +61,14 @@ export default class Floss extends Component {
                         <option value='5'> 5 </option>
                         <option value='6'> 5+ </option>
                     </select>
-
+                <button onClick={ this.handleAddStash }>Stash</button>
                 </li>
             </div>
         )
     }
 }
 
+// <input 
+//     value={ this.state.email } 
+//     onChange={(e) => this.setState({ email: e.target.value})} />
+// <h4>Enter your password:</h4>

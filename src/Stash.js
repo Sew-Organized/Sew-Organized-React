@@ -3,9 +3,9 @@ import List from 'react'
 import request from 'superagent'
 
 export default class Stash extends Component {
-    state = {
-        flosses: [],
-    }
+    // state = {
+    //     flosses: [],
+    // }
 
     async componentDidMount() {
         const user = JSON.parse(localStorage.getItem('user'));

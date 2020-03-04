@@ -21,9 +21,8 @@ export default class List extends Component {
             <div>
                 <ul className='flossContainer'>
                 { this.props.flosses.map(floss => 
-                    
-                        <Floss floss={floss} />
-                    ) }
+                    <Floss floss={floss} />
+                ) }
                 </ul>
             </div>
         )
