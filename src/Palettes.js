@@ -44,16 +44,17 @@ export default class Palettes extends Component {
 
     // take the array of objects returned by generateApiColors,
     dmcMatches = () => {
-        // map through each object
-        const matchedDMCs = this.state.randomPalette.map(object => {
-            // run the matchDMC function 
-            console.log(object.r, object.g, object.b);
+        const matchedDMCIds = this.state.randomPalette.map(object => {
             return this.matchDMC(object.r, object.g, object.b) 
         })
-        // put that new array into state
-        this.setState({ matchedDMCs});
-    }
 
+        const matchedDMCObjects = matchedDMCIds.map(id => {
+            return this.findById(this.state.dmcData, id);
+        })
+
+        this.setState({ matchedDMCObjects });
+
+    }
 
     // does color math, and is called in matchDMC
     distanceFromColor(idx, r, g, b) {
@@ -78,12 +79,25 @@ export default class Palettes extends Component {
         distanceList.sort(function(a, b){return a[0]-b[0]});
         // Get the values that are closest to the RGB value
         const dmcI = dmcColorList[distanceList[0][1]][0];
-        const dmcR = dmcColorList[distanceList[0][1]][2];
-        const dmcG = dmcColorList[distanceList[0][1]][3];
-        const dmcB = dmcColorList[distanceList[0][1]][4];
+        // const dmcR = dmcColorList[distanceList[0][1]][2];
+        // const dmcG = dmcColorList[distanceList[0][1]][3];
+        // const dmcB = dmcColorList[distanceList[0][1]][4];
 
-        return `ID: ${dmcI}, RGB: ${dmcR}, ${dmcG}, ${dmcB}`;
+        return dmcI;
     }
+
+    findById = (array, id) => {
+        for (let index = 0; index < array.length; index++) {
+            const item = array[index];
+            if (item.id === id) {
+                return item;
+            } 
+        }
+    };
+
+
+
+
 
 
 
@@ -92,7 +106,7 @@ export default class Palettes extends Component {
 
     // savePalette();
 
-// function to match the returned colors to DMC ids
+
 // map over results of that function and return a div with background color of each color
 
     render() {
@@ -104,7 +118,7 @@ export default class Palettes extends Component {
                 <div>
                     {
                         <RandomPalette
-                            palette={this.state.matchedDMCs} />
+                            palette={this.state.matchedDMCObjects} />
                     }
                 </div>
             </div>

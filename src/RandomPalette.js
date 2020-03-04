@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import request from 'superagent';
 
 export default class RandomPalette extends Component {
+
     render() {
         return (
             <div>
