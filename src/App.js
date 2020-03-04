@@ -35,6 +35,7 @@ export default class App extends Component {
             <Route path='/colors' component={Colors} />
             <Route path='/user/stash' component={Stash} />
           </Switch>
+
         </Router>
       </div>
     )
