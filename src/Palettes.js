@@ -94,8 +94,6 @@ export default class Palettes extends Component {
                     { this.state.matchedDMCObjects 
                     ? 
                     <div>
-                        <input placeholder="Name Your Palette" onChange={(e) => this.setState({ paletteName: e.target.value })} />
-                        <button onClick={this.savePalette}>Save Palette to Stash</button>
                         <RandomPalette palette={this.state.matchedDMCObjects} />
                     </div>
                     : '' }
