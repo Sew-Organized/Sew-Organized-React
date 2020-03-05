@@ -5,7 +5,7 @@ import request from 'superagent'
 
 export default class Floss extends Component {
     state = {
-        quantityInput: '',
+        quantityInput: this.props.floss.quantity || 0,
     }
 
     //  callback that touches parent state
@@ -40,7 +40,7 @@ export default class Floss extends Component {
         const updateStash = await request.put(`https://mighty-mesa-93390.herokuapp.com/api/username/stash/${this.props.floss.id}`, {
             quantity: this.state.quantityInput
         }).set('Authorization', user.token); 
-        
+        console.log(this.state.quantityInput);
         };
 
 
@@ -53,8 +53,8 @@ export default class Floss extends Component {
             hex, 
         } = floss;
 
-        console.log('window location test', window.location.pathname);
-        // console.log('pathname?', this.context.location.pathname)
+        console.log(this.props.floss);
+        console.log(this.props.flosses);
 
         return (
             <div>
@@ -62,7 +62,12 @@ export default class Floss extends Component {
                     <Link to={`detail/${floss.id}`}>
                     <h3>{ description }</h3>
                         </Link>
-                    <h3>{ dmc_id }</h3>
+                    <h3>{ 
+                            window.location.pathname === '/user/stash'
+                                ? dmc_id
+                                : floss.id
+                         }
+                    </h3>
                     <div>
                         <div className='hexContainer' style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 
                     </div>
@@ -71,7 +76,7 @@ export default class Floss extends Component {
 
                    { window.location.pathname === '/user/stash'
                    ? <label for='owned'>Skeins Owned: 
-                   <select id='owned' onChange={(e) => this.setState({ quantityInput: e.target.value})}>
+                   <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
 {/* Write a function to remove from stash if value=0 */}
                         <option value='0'> 0 </option>
                         <option value='0.5'> 0.5 </option>
