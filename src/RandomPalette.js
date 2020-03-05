@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import request from 'superagent';
+import Floss from './Floss.js';
 
 export default class RandomPalette extends Component {
     state = {
@@ -20,22 +21,18 @@ export default class RandomPalette extends Component {
         }).set('Authorization', user.token);
     }
 
-    // map over results of that function and return a div with background color of each color
-
     render() {
+        console.log(this.props);
         return (
             <div>
                 <div className="paletteContainer">
                     <input placeholder="Name Your Palette" onChange={(e) => this.setState({ paletteName: e.target.value })} />
-                    {/* double check how to call "hex" below */}
+                        <button onClick={this.savePalette}>Save Palette to Stash</button>
                     <div className="palette">
-                        {/* <div className="paletteColor" style={{backgroundColor: `#${hex}`}}></div>
-                        <div className="paletteColor" style={{backgroundColor: `#${hex}`}}></div>
-                        <div className="paletteColor" style={{backgroundColor: `#${hex}`}}></div>
-                        <div className="paletteColor" style={{backgroundColor: `#${hex}`}}></div>
-                        <div className="paletteColor" style={{backgroundColor: `#${hex}`}}></div> */}
+                        { this.props.palette.map(floss => 
+                        <Floss floss={floss} />
+                    )}
                     </div>
-                    <button onClick={this.savePalette}>Save Palette to Stash</button>
                 </div>
             </div>
         )

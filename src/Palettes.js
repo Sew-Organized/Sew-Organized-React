@@ -6,7 +6,7 @@ export default class Palettes extends Component {
     state = {
         palettes: [],
         randomPalette: [],
-        dmcData: []
+        dmcData: [],
     };
 
 // Fetches data for user's saved palettes and all dmc data, sets in state
@@ -91,10 +91,9 @@ export default class Palettes extends Component {
                 <p>Looking for color inspiration? Click the button to generate a palette of floss colors to spark your next project idea.</p>
                 <button onClick={this.generateApiColors}>Generate Color Palette</button>
                 <div>
-                    {
-                        <RandomPalette
-                            palette={this.state.matchedDMCObjects} />
-                    }
+                    { this.state.matchedDMCObjects 
+                    ? <RandomPalette palette={this.state.matchedDMCObjects} />
+                    : '' }
                 </div>
             </div>
         )
