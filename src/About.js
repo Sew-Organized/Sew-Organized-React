@@ -24,7 +24,6 @@ export default class About extends Component {
                             </a>
                         </div>
                     </div>
-
                     <div>
                     <li className='aboutLI' id='aboutDakota'>
                         <img src="dakota.jpeg" alt='dakota' height="150" width="150"></img>
@@ -46,7 +45,7 @@ export default class About extends Component {
                             <img src="dannie.jpeg" alt='dannie' height="150" width="150"></img>
                             <h3>Dannie Schumaker</h3>
                         </li>
-                        <p className='aboutText'></p>
+                        <p className='aboutText'>makes beautiful and useful things with needles, hooks, words and code. </p>
                         <div className="social-media-links">
                             <a href="https://www.linkedin.com/in/dannieschumaker/" target="_blank">
                                 <img src="li_black.png"></img>
