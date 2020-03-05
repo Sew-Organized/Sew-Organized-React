@@ -22,35 +22,28 @@ export default class Palettes extends Component {
         this.setState({ palettes: palettesData.body, dmcData: dmcData.body })
     }
 
-    // returns an array of 5 objects, each containing RGB values
+    // generates five random colors from color api, converts to nearest DMC colors, and changes format of data
     generateApiColors = async () => {
         const randomPalette = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/scheme`);
-
-        this.setState({ randomPalette: randomPalette.body })
-        console.log(this.state);
-
-        return randomPalette.body;
+        this.setState({ randomPalette: randomPalette.body });
+        this.dmcMatches();
     };
 
     // takes full DMC color object array and transforms into array of arrays
     transformPaletteData = () => {
         // turns dmc colors data into arrays for compatibility reasons
         const dmcColorList = this.state.dmcData.map(color => Object.values(color));
-    
         return dmcColorList;
-
     };
 
-    // take the array of objects returned by generateApiColors,
+    // take the array of objects returned by generateApiColors
     dmcMatches = () => {
         const matchedDMCIds = this.state.randomPalette.map(object => {
             return this.matchDMC(object.r, object.g, object.b) 
         })
-
         const matchedDMCObjects = matchedDMCIds.map(id => {
             return this.findById(this.state.dmcData, id);
         })
-
         this.setState({ matchedDMCObjects });
     }
 
@@ -80,7 +73,6 @@ export default class Palettes extends Component {
         // const dmcR = dmcColorList[distanceList[0][1]][2];
         // const dmcG = dmcColorList[distanceList[0][1]][3];
         // const dmcB = dmcColorList[distanceList[0][1]][4];
-
         return dmcI;
     }
 
@@ -96,7 +88,6 @@ export default class Palettes extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.dmcMatches}>TEST BUTTON</button>
                 <p>Looking for color inspiration? Click the button to generate a palette of floss colors to spark your next project idea.</p>
                 <button onClick={this.generateApiColors}>Generate Color Palette</button>
                 <div>
