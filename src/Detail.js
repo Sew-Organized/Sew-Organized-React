@@ -14,8 +14,10 @@ export default class Detail extends Component {
 
     async componentDidMount() {
         const user = JSON.parse(localStorage.getItem('user'));
+
         const data = await (await getFloss(this.props.match.params.id, user));
         if (data.body) {
+            console.log(data.body);
             this.setState({ floss: data.body })
         }
         // put in api request link for rendering data
