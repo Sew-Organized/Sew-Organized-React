@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-// import request from 'superagent';
 // import { Link } from 'react-router-dom';
 import Floss from './Floss.js';
 
 export default class List extends Component {
-  render() {
+    render() {
         return (
             <div>
                 <ul className='flossContainer'>

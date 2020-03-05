@@ -19,9 +19,6 @@ export default class SavedPalettes extends Component {
     }
 
     render() {
-        // const savedPaletteArray = this.state.savedPalettes.map(palette => {
-        //     return [palette.dmc_one, palette.dmc_two, palette.dmc_three, palette.dmc_four, palette.dmc_five];
-        // });
         return(
             <div>
                 <h1>Saved palettes</h1>

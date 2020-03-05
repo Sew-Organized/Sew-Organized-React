@@ -60,22 +60,23 @@ export default withRouter(class Floss extends Component {
         return (
             <div>
                 <li className='flossBox'>
+                    {/* <Link to={`detail/${floss.id}`} key={`link_${dmc_id}`}> */}
                     <h3>{ description }</h3>
+                    {/* </Link> */}
                     <h3>{ 
                             window.location.pathname === '/user/stash'
                                 ? dmc_id
                                 : floss.id
-                         }
+                        }
                     </h3>
                     <div>
                         <div className='hexContainer' style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 
                     </div>
 {/* Write a function to post api/username/stash/id to update quantity*/}
                     
-
-                   { window.location.pathname === '/user/stash'
-                   ? <label for='owned'>Skeins Owned: 
-                   <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
+                { window.location.pathname === '/user/stash'
+                ? <label for='owned'>Skeins Owned: 
+                <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
 {/* Write a function to remove from stash if value=0 */}
                         <option value='0'> 0 </option>
                         <option value='0.5'> 0.5 </option>
