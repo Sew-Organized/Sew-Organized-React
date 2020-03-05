@@ -38,6 +38,10 @@ export default class Floss extends Component {
             id,
             hex, 
         } = floss;
+
+        console.log('window location test', window.location.pathname);
+        // console.log('pathname?', this.context.location.pathname)
+
         return (
             <div>
                 <li className='flossBox'>
@@ -49,8 +53,11 @@ export default class Floss extends Component {
                         <div className='hexContainer' style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 
                     </div>
 {/* Write a function to post api/username/stash/id to update quantity*/}
-                    <label for='owned'>Skeins Owned: </label>
-                    <select id='owned' onChange={(e) => this.setState({ quantityInput: e.target.value})}>
+                    
+
+                   { window.location.pathname === '/user/stash'
+                   ? <label for='owned'>Skeins Owned: 
+                   <select id='owned' onChange={(e) => this.setState({ quantityInput: e.target.value})}>
 {/* Write a function to remove from stash if value=0 */}
                         <option value='0'> 0 </option>
                         <option value='0.5'> 0.5 </option>
@@ -65,6 +72,10 @@ export default class Floss extends Component {
                         <option value='5'> 5 </option>
                         <option value='6'> 5+ </option>
                     </select>
+                    </label>
+                    : <p></p>
+                    }
+
                 <button onClick={ this.handleAddStash }>Stash</button>
                 </li>
             </div>
