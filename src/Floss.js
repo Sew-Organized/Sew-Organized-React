@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import request from 'superagent'
 
 
-export default class Floss extends Component {
+export default withRouter(class Floss extends Component {
     state = {
         quantityInput: this.props.floss.quantity || 0,
     }
@@ -30,20 +30,24 @@ export default class Floss extends Component {
 
         const user = JSON.parse(localStorage.getItem('user'));
 
-        // const myStash = {
-        //     dmcId: this.props.floss.id,
-        //     quantity: this.state.quantityInput
-        // };
-
-        // this.props.setStash(myStash);
-
         const updateStash = await request.put(`https://mighty-mesa-93390.herokuapp.com/api/username/stash/${this.props.floss.id}`, {
             quantity: this.state.quantityInput
-        }).set('Authorization', user.token); 
-        console.log(this.state.quantityInput);
+        }).set('Authorization', user.token);
         };
 
+    handleDeleteFromStash = async (e) => {
+        e.preventDefault();
 
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        this.props.deleteFlossFromState(e);
+
+        const deletedFromStash = await request.delete(`https://mighty-mesa-93390.herokuapp.com/api/username/stash/${this.props.floss.id}`)
+            .set('Authorization', user.token);
+        
+        
+
+        };
 
     render() {
         const { floss } = this.props;
@@ -53,15 +57,10 @@ export default class Floss extends Component {
             hex, 
         } = floss;
 
-        console.log(this.props.floss);
-        console.log(this.props.flosses);
-
         return (
             <div>
                 <li className='flossBox'>
-                    <Link to={`detail/${floss.id}`}>
                     <h3>{ description }</h3>
-                        </Link>
                     <h3>{ 
                             window.location.pathname === '/user/stash'
                                 ? dmc_id
@@ -95,20 +94,16 @@ export default class Floss extends Component {
                     : <p></p>
                     }
                 { window.location.pathname === '/user/stash'
-                    ? <button onClick={ this.handleUpdateStash }> Update Stash</button>
-                    : <button onClick={ this.handleAddStash }>Stash</button>
+                    ?   <div>
+                            <button onClick={ this.handleUpdateStash }> Update Stash</button>
+                            <button value={this.props.floss.id} onClick={ this.handleDeleteFromStash }> Remove</button>
+                        </div>
+                    :   <button onClick={ this.handleAddStash }>Stash</button>
                 }
                 </li>
             </div>
         )
     }
 
-}
-    
-
-
-// <input 
-//     value={ this.state.email } 
-//     onChange={(e) => this.setState({ email: e.target.value})} />
-// <h4>Enter your password:</h4>
+})  
 
