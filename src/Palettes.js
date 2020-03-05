@@ -92,7 +92,10 @@ export default class Palettes extends Component {
                 <button onClick={this.generateApiColors}>Generate Color Palette</button>
                 <div>
                     { this.state.matchedDMCObjects 
-                    ? <RandomPalette palette={this.state.matchedDMCObjects} />
+                    ? 
+                    <div>
+                        <RandomPalette palette={this.state.matchedDMCObjects} />
+                    </div>
                     : '' }
                 </div>
             </div>
