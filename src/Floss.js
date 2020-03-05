@@ -44,9 +44,15 @@ export default withRouter(class Floss extends Component {
 
         const deletedFromStash = await request.delete(`https://mighty-mesa-93390.herokuapp.com/api/username/stash/${this.props.floss.id}`)
             .set('Authorization', user.token);
-        
-        
+        };
 
+        findById = (array, id) => {
+            for (let index = 0; index < array.length; index++) {
+                const item = array[index];
+                if (item.dmc_id === id) {
+                    return true;
+                } 
+            }
         };
 
     render() {
@@ -92,14 +98,19 @@ export default withRouter(class Floss extends Component {
                         <option value='6'> 5+ </option>
                     </select>
                     </label>
-                    : <p></p>
+                    : ''
                     }
                 { window.location.pathname === '/user/stash'
                     ?   <div>
                             <button onClick={ this.handleUpdateStash }> Update Stash</button>
                             <button value={this.props.floss.id} onClick={ this.handleDeleteFromStash }> Remove</button>
                         </div>
-                    :   <button onClick={ this.handleAddStash }>Stash</button>
+                    :   <button 
+                            onClick={ this.handleAddStash }
+                            disabled={this.findById(this.props.stashedFlosses, this.props.floss.id) 
+                            ? true
+                            : false } 
+                            >Stash</button>
                 }
                 </li>
             </div>
