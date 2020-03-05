@@ -39,7 +39,7 @@ export default class Colors extends Component {
         return (
             <div>
                 {/* <SearchBar /> */}
-                <List handleClick={this.setStash} flosses={this.state.flosses} />
+                <List handleClick={this.setStash} flosses={this.state.flosses} stashedFlosses={this.state.stashed} />
                 {/* <Paging /> */}
             </div>
         )
