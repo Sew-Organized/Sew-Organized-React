@@ -4,6 +4,23 @@
     margin-left: 1.25em;
 }
 
+/* Splash Section */
+.splashLinks {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* SignUp Section */
+.signUpDiv {
+    text-align: center;
+}
+
+
+/* LogIn Section */
+.logInDiv {
+    text-align: center;
+}
 
 /* About Devs Section */
 .aboutUL {
@@ -73,3 +90,7 @@
     width: 100px;
     height: 100px; 
 }
+
+/* The sidepanel menu */
+
+/* possition relative and then left 50px or something */

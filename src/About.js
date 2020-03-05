@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
+import Nav from './Nav.js';
 
 export default class About extends Component {
     render() {
         return (
+            <>
+            <Nav />
             <div className='aboutDiv'>
                 <h2 id='aboutDevs'>About the Developers</h2>
                 <ul className='aboutUL'>
@@ -87,6 +90,7 @@ export default class About extends Component {
                     </div>
                 </ul>
             </div>
+            </>
         )
     }
 }

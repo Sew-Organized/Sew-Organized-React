@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 import Floss from './Floss.js';
+import Nav from './Nav.js';
 import RandomPalette from './RandomPalette';
 // import UserPalette from './UserPalette.js';
 
@@ -21,6 +22,7 @@ export default class SavedPalettes extends Component {
     render() {
         return(
             <div>
+                <Nav />
                 <h1>Saved palettes</h1>
                 <div className="paletteContainer">
                 {
