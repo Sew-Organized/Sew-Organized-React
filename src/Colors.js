@@ -3,15 +3,7 @@ import React, { Component } from 'react';
 import List from './List.js';
 // import Paging from './Paging.js';
 import request from 'superagent';
-import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import './Nav.css';
-import { 
-    Route, 
-    BrowserRouter as Router, } from 'react-router-dom';
-import Palettes from './Palettes.js';
-import About from './About.js';
-import Stash from './Stash.js';
+import Nav from './Nav.js';
 
 export default class Colors extends Component {
     // state for the array of flosses to be posted to page
@@ -45,67 +37,14 @@ export default class Colors extends Component {
 
     render() {
         console.log('state:', this.state);
-        return (
-            <>
-            <Router>
-            <Route render={({ location, history }) => (
-                <React.Fragment>
-                    <SideNav className='sideNav'
-                        onSelect={(selected) => {
-                            const to = '/' + selected;
-                            if (location.pathname !== to) {
-                                history.push(to);
-                            }
-                        }}
-                    >
-                        <SideNav.Toggle />
-                        <SideNav.Nav defaultSelected="About">
-
-                            <NavItem eventKey="About">
-                                <NavIcon>
-                                    <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
-                                </NavIcon>
-                                <NavText>
-                                    About
-                                </NavText>
-                            </NavItem>
-
-                            <NavItem eventKey="Stash">
-                                <NavIcon>
-                                    <i className="fa fa-fw fa-device" style={{ fontSize: '1.75em' }} />
-                                </NavIcon>
-                                <NavText>
-                                    My Stash
-                                </NavText>
-                            </NavItem>
-
-                            <NavItem eventKey="palettes">
-                                <NavIcon>
-                                    <i className="fa fa-fw fa-device" style={{ fontSize: '1.75em' }} />
-                                </NavIcon>
-                                <NavText>
-                                    Palette Generator
-                                </NavText>
-                            </NavItem>
-
-                        </SideNav.Nav>
-                    </SideNav>
-                    <main>
-                        <Route path="/About" exact component={props => <About />} />
-                        <Route path="/user/stash" component={props => <Stash />} />
-                        <Route path="/palettes" component={props => <Palettes />} />
-                    </main>
-                </React.Fragment>
-            )}
-            />
-        </Router>  
-
+        return (  
             <div>
+                <Nav />
                 {/* <SearchBar /> */}
                 <List handleClick={this.setStash} flosses={this.state.flosses} />
                 {/* <Paging /> */}
             </div>
-            </>
+
         )
     }
 }

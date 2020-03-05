@@ -19,18 +19,27 @@ state = {
         this.setState({
             stashed: data.body
         })
+    }
 
-       
+    deleteFlossFromState = (e) => {
+        e.preventDefault();
 
-        //don't think we need to set state
-        // this.setState({ flosses: data.body })}
+        const flossToDelete = e.target.value;
+        const stash = [...this.state.stashed];
+        stash.splice(stash.findIndex(floss => {
+            return floss.id === flossToDelete
+        }), 1)
+
+        this.setState({
+            stashed: stash
+        })
     }
 
     render() {
         return (
             <div>
-                <List flosses={this.state.stashed} /> 
                 <Nav />
+                <List flosses={this.state.stashed} deleteFlossFromState={this.deleteFlossFromState} /> 
             </div>
         )
     }}
