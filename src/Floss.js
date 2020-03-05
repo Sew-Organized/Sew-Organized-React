@@ -41,7 +41,7 @@ export default class Floss extends Component {
         return (
             <div>
                 <li className='flossBox'>
-                    <Link to={`Detail/${floss.id}`}>
+                    <Link to={`detail/${floss.id}`}>
                     <h3>{ description }</h3>
                         </Link>
                     <h3>{ id }</h3>
@@ -71,8 +71,3 @@ export default class Floss extends Component {
         )
     }
 }
-
-// <input 
-//     value={ this.state.email } 
-//     onChange={(e) => this.setState({ email: e.target.value})} />
-// <h4>Enter your password:</h4>
