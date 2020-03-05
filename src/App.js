@@ -13,6 +13,7 @@ import SignUp from './SignUp.js';
 import LogIn from './LogIn.js';
 import Colors from './Colors.js';
 import Palettes from './Palettes.js';
+import SavedPalettes from './SavedPalettes.js';
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user'));
 
@@ -34,6 +35,7 @@ export default class App extends Component {
             <Route path='/login' component={LogIn} />
             <Route path='/colors' component={Colors} />
             <Route path='/user/stash' component={Stash} />
+            <Route path='/user/palettes' component={SavedPalettes} />
             <Route path='/palettes' component={Palettes} />
             {/* talked about changing this route to the username dynamically */}
           </Switch>
