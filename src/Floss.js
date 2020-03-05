@@ -25,7 +25,8 @@ export default class Floss extends Component {
         this.props.setStash(myStash);
         
         const stash = await request.post(`https://mighty-mesa-93390.herokuapp.com/api/username/stash`, {
-            quantity: this.state.quantityInput }).set('Authorization', user.token);
+            quantity: this.state.quantityInput,
+            dmcId: this.props.floss.id }).set('Authorization', user.token);
     
         // maybe need to add auth 
     }
