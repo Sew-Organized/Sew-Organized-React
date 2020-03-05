@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 export default class RandomPalette extends Component {
+    // handleInput();
+
+    // savePalette();
+
+    // map over results of that function and return a div with background color of each color
+
 
     render() {
         return (
