@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 import Floss from './Floss.js';
+import Nav from './Nav.js';
 
 export default class RandomPalette extends Component {
     state = {
@@ -25,6 +26,7 @@ export default class RandomPalette extends Component {
         console.log(this.props);
         return (
             <div>
+                <Nav />
                 <div className="paletteContainer">
                     <input placeholder="Name Your Palette" onChange={(e) => this.setState({ paletteName: e.target.value })} />
                         <button onClick={this.savePalette}>Save Palette to Stash</button>
