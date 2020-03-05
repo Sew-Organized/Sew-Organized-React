@@ -92,7 +92,12 @@ export default class Palettes extends Component {
                 <button onClick={this.generateApiColors}>Generate Color Palette</button>
                 <div>
                     { this.state.matchedDMCObjects 
-                    ? <RandomPalette palette={this.state.matchedDMCObjects} />
+                    ? 
+                    <div>
+                        <input placeholder="Name Your Palette" onChange={(e) => this.setState({ paletteName: e.target.value })} />
+                        <button onClick={this.savePalette}>Save Palette to Stash</button>
+                        <RandomPalette palette={this.state.matchedDMCObjects} />
+                    </div>
                     : '' }
                 </div>
             </div>

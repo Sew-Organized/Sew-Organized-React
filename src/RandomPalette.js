@@ -26,8 +26,6 @@ export default class RandomPalette extends Component {
         return (
             <div>
                 <div className="paletteContainer">
-                    <input placeholder="Name Your Palette" onChange={(e) => this.setState({ paletteName: e.target.value })} />
-                        <button onClick={this.savePalette}>Save Palette to Stash</button>
                     <div className="palette">
                         { this.props.palette.map(floss => 
                         <Floss floss={floss} />
