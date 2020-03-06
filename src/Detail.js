@@ -93,7 +93,7 @@ export default class Detail extends Component {
 
     render() {
         return (
-            <div>
+            <div className="componentContainer">
                 <Header />
                 <Nav />
                 <div>
