@@ -7,6 +7,10 @@ header {
     margin-left: 60px;
 }
 
+header h1 {
+    font-size: 4em;
+}
+
 .logo {
     color: rgb(235, 210, 229);
 }
@@ -103,12 +107,6 @@ button {
     background-color: rgba(82, 85, 63, 0.671);
 }
 
-/* SignUp Section */
-/* .signUpDiv {
-    text-align: center;
-    background: rgba(82, 85, 63, 0.671);
-} */
-
 
 /* LogIn Section */
 .logInDiv {
@@ -127,21 +125,9 @@ button {
     margin: 0.50em;
     padding: 0.50em;
     padding-top: 1.25em;
-    height: 200px;
-    width: 150px;
-    font-size: 14px;
-    font-weight: bold;
-    color: rgb(74, 87, 79);
-    text-shadow: 2px 0px  rgb(143, 168, 153);
-}
-
-.dannieLI {
-    margin: 0.50em;
-    padding: 0.50em;
-    padding-top: 1.25em;
-    height: 200px;
-    width: 150px;
-    font-size: 13.5px;
+    height: 250px;
+    width: 200px;
+    font-size: 20px;
     font-weight: bold;
     color: rgb(74, 87, 79);
     text-shadow: 2px 0px  rgb(143, 168, 153);
@@ -149,13 +135,12 @@ button {
 
 .aboutText {
     word-wrap: wrap;
-    height: 120px;
-    width: 150px;
-    font-size: 14px;
+    height: 200px;
+    width: 200px;
+    font-size: 20px;
     margin: 0.50em;
     padding: 0.50em;
-    border: solid black;
-    background-color: rgba(82, 85, 63, 0.671);
+    background-color:rgba(93, 51, 86, 0.755);
 }
 
 #aboutDevs {
@@ -248,7 +233,11 @@ select {
     margin-right: 40px;
 }
 
-/* Palettes */
+#ownedText {
+    font-family: 'Open Sans';
+}
+
+/* Palettes Section */
 
 .centered {
     text-align: center;
@@ -256,18 +245,26 @@ select {
 
 div.palette {
     display: flex;
+    justify-content: center;
     flex-flow: row wrap;
-    /* justify-content: space-around; */
     margin-bottom: 20px;
 }
 
 div.paletteContainer {
     display: flex;
     flex-direction: column;
+    background-color: rgba(93, 51, 86, 0.755);
+    margin-bottom: 5em;
+    padding: 3em;
+    max-width: 1500px;
+    justify-content: center;
+    align-content: center;
 }
 
 .paletteContainer h2 {
     margin-left: 40px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 30px;
 }
 
 div.flexRightAlign {
@@ -286,4 +283,49 @@ div.flexRightAlign input {
 
 div.palette div.flossContainer li {
     height: 210px;
+}
+
+.palettesContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} 
+
+/* Pallete Generator */
+
+.generator {
+    background-color: rgba(255, 255, 255, 0.769);
+    color: rgb(93, 51, 86);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    margin: 1em;
+    padding: 1em;
+    max-width: 1500px;
+}
+
+#generatorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.detailFloss li {
+    height: 210px;
+}
+
+div.detailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.detailFlossContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 45px;
 }

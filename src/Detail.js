@@ -92,27 +92,32 @@ export default class Detail extends Component {
     };
 
     render() {
+        const header = "Detail";
         return (
             <div className="componentContainer">
-                <Header />
+                <Header header={header} />
                 <Nav />
-                <div>
-                    <div>
-                        <Floss floss={ this.state.floss } />
+                <div className="detailContainer">
+                    <div className="generator">
+                        <p>Don't have the color your project calls for? Click below to generate similar DMC colors:</p>
+                        <button className="primary" onClick={this.generateApiColors}>Generate Color Matches</button>
                     </div>
-                </div>
-                <p>Don't have the color your project calls for? Click below to generate similar DMC colors:</p>
-                <button className="primary" onClick={this.generateApiColors}>Generate Color Matches</button>
-                <div>
-                    {console.log(this.state.matchedDMCObjects)}
-                    { this.state.matchedDMCObjects 
-                    ? 
-                    <div>
-                        <RandomPalette palette={this.state.matchedDMCObjects} />
+                    <div className="detailFlossContainer">
+                        <div className="detailFloss">
+                            <Floss floss={ this.state.floss } />
+                        </div>
+                        <div>
+                            {console.log(this.state.matchedDMCObjects)}
+                            { this.state.matchedDMCObjects 
+                            ? 
+                            <div>
+                                <RandomPalette palette={this.state.matchedDMCObjects} />
+                            </div>
+                            : '' 
+                        }
+                            {console.log('matched array in state', this.state.matchedDMCObjects)}
+                        </div>
                     </div>
-                    : '' 
-                    }
-                    {console.log('matched array in state', this.state.matchedDMCObjects)}
                 </div>
             </div>
         )

@@ -96,8 +96,13 @@ export default class Palettes extends Component {
             <div className="componentContainer">
                 <Header header={header} />
                 <Nav />
+                <div id="generatorContainer">
+                <div className='generator'>
                 <p>Looking for color inspiration? Click the button to generate a palette of floss colors to spark your next project idea.</p>
                 <button onClick={this.generateApiColors}>Generate Color Palette</button>
+                </div>
+                </div>
+
                 <div>
                     { this.state.matchedDMCObjects 
                     ? 

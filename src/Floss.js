@@ -85,7 +85,7 @@ export default withRouter(class Floss extends Component {
                     </div>
                     
                 { this.props.location.pathname === '/user/stash'
-                    ?   <label for='owned'>Skeins Owned: 
+                    ?   <label id='ownedText' for='owned'>Skeins Owned: 
                             <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
         
                                 <option value='0'> 0 </option>

@@ -41,19 +41,26 @@ p.splash {
     background-color: #C79682;
     padding: 10px;
     margin: 15px;
+    cursor: pointer;
 }
 
 #signUpButton {
-    color: #8D4D2F;
-    background-color: #C79682;
+    color:  rgb(174, 207, 138);
+    background-color: #5D3356;
 }
 
 #signInButton {
-    color: #C79682;
-    background-color: #8D4D2F;
+    color: #5D3356;
+    background-color: rgb(174, 207, 138);
 }
 
-/* DEDCD0; */
-/* 654551 */
+#signUpButton:hover {
+    background-color:rgb(181, 212, 147);
+    color: rgba(93, 51, 86, .7);
+}
 
-/* 8D4D2F */
+#signInButton:hover {
+    background-color:rgba(93, 51, 86, .7);
+    color:rgb(181, 212, 147);
+}
+
