@@ -19,7 +19,7 @@ export default class Splash extends Component {
                 <main>
                     <h1 className="splash">Sew Organized</h1>
           
-                    <p>Do your craft supplies look like this? 
+                    <p className="splash">Do your craft supplies look like this? 
                     <br />
                     Are you looking for a better solution for your embroidery floss needs?</p>
 
