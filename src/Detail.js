@@ -97,7 +97,7 @@ export default class Detail extends Component {
                     <Floss floss={ this.state.floss } />
                 </ul>
                 <p>Don't have the color your project calls for? Click below to generate similar DMC colors:</p>
-                <button onClick={this.generateApiColors}>Generate Color Matches</button>
+                <button className="primary" onClick={this.generateApiColors}>Generate Color Matches</button>
                 <div>
                     { this.state.matchedDMCObjects 
                     ? 
