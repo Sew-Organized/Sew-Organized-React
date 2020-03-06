@@ -64,17 +64,17 @@ export default withRouter(class Floss extends Component {
         } = floss;
 
         return (
-            <div>
+            <div className="flossContainer">
                 <li className='flossBox'>
                     <Link to={`detail/${floss.id}`} key={`link_${dmc_id}`}>
                     <h3>{ description }</h3>
                     </Link>
-                    <h3>{ 
+                    <h4>{ 
                             this.props.location.pathname === '/user/stash'
                                 ? dmc_id
                                 : floss.id
                         }
-                    </h3>
+                    </h4>
                     <div>
                         <div className='hexContainer' style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 
                     </div>
@@ -102,11 +102,11 @@ export default withRouter(class Floss extends Component {
                     }
                 { this.props.location.pathname === '/user/stash'
                     ?   <div>
-                            <button onClick={ this.handleUpdateStash }> Update Stash</button>
-                            <button value={this.props.floss.id} onClick={ this.handleDeleteFromStash }> Remove</button>
+                            <button className="primary" onClick={ this.handleUpdateStash }> Update Stash</button>
+                            <button className="delete" value={this.props.floss.id} onClick={ this.handleDeleteFromStash }> Remove</button>
                         </div>
                     : this.props.location.pathname === '/colors'   
-                        ? <button 
+                        ? <button className="primary"
                             onClick={ this.handleAddStash }
                             disabled={this.findById(this.props.stashedFlosses, this.props.floss.id) 
                             ? true
