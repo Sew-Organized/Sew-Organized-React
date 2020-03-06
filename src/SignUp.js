@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import request from 'superagent';
+import './SignUp.css'; 
 
 export default class SignUp extends Component {
     state = {

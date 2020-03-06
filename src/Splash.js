@@ -18,8 +18,10 @@ export default class Splash extends Component {
             <div>
                 <main>
                     <h1 className="splash">Sew Organized</h1>
-            
-                    <p className="splash">Do your craft supplies look like this? Are you looking for a better solution for your embroidery floss needs?</p>
+          
+                    <p>Do your craft supplies look like this? 
+                    <br />
+                    Are you looking for a better solution for your embroidery floss needs?</p>
 
                     <button className="splash" id='signUpButton' onClick={this.handleSignUp}>Sign up Now!</button>
 
