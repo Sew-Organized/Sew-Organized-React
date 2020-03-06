@@ -4,12 +4,13 @@ import Header from './Header.js';
 
 export default class About extends Component {
     render() {
+        const header = "About the Developers";
         return (
             <div className="componentContainer">
-                <Header />
+                <Header header={header} />
                 <Nav />
                 <div className='aboutDiv'>
-                    <h2 id='aboutDevs' textAlign='center'>About the Developers</h2>
+                    {/* <h2 id='aboutDevs' textAlign='center'>About the Developers</h2> */}
                     <ul className='aboutUL'>
                         <div className="devBox">
                             <li className='aboutLI' id='aboutChelsea'>

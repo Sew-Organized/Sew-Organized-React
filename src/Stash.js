@@ -15,8 +15,6 @@ state = {
         // go get the user's stashed flosses from the database and authorize the user to get their flosses
         const data = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/username/stash`).set('Authorization', user.token);
 
-        console.log('data:', data);
-
         this.setState({
             stashed: data.body
         })
@@ -37,9 +35,10 @@ state = {
     }
 
     render() {
+        const header = "My Stash";
         return (
             <div className="componentContainer">
-                <Header />
+                <Header header={header} />
                 <Nav />
                 <List flosses={this.state.stashed} deleteFlossFromState={this.deleteFlossFromState} /> 
             </div>

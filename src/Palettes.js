@@ -91,9 +91,10 @@ export default class Palettes extends Component {
     };
 
     render() {
+        const header = "Palette Generator";
         return (
             <div className="componentContainer">
-                <Header />
+                <Header header={header} />
                 <Nav />
                 <p>Looking for color inspiration? Click the button to generate a palette of floss colors to spark your next project idea.</p>
                 <button onClick={this.generateApiColors}>Generate Color Palette</button>
