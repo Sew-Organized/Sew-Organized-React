@@ -36,11 +36,12 @@ export default class SavedPalettes extends Component {
     //     };
 
     render() {
+        const header = "Saved Palettes";
         return(
             <div className="componentContainer">
-                <Header />
+                <Header header={header} />
                 <Nav />
-                <h1 className="centered">Saved Palettes</h1>
+                {/* <h1 className="centered">Saved Palettes</h1> */}
                 <div className="palettesContainer">
                 {
                     this.state.savedPalettes.map(savedPalette => 

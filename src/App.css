@@ -1,5 +1,16 @@
 
 /* Body Section */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 60px;
+}
+
+.logo {
+    color: rgb(235, 210, 229);
+}
+
 body {
     /* position: relative; */
     left: 40px;
