@@ -40,18 +40,20 @@ export default class SavedPalettes extends Component {
             <div className="componentContainer">
                 <Header />
                 <Nav />
-                <h1>Saved palettes</h1>
-                <div className="paletteContainer">
+                <h1 className="centered">Saved Palettes</h1>
+                <div className="palettesContainer">
                 {
                     this.state.savedPalettes.map(savedPalette => 
-                        <div className="palette">
+                        <div className="paletteContainer">
                             <h2>{savedPalette.palette_name}</h2>
-                            <Floss floss={JSON.parse(savedPalette.dmc_one)} />
-                            <Floss floss={JSON.parse(savedPalette.dmc_two)} />
-                            <Floss floss={JSON.parse(savedPalette.dmc_three)} />
-                            <Floss floss={JSON.parse(savedPalette.dmc_four)} />
-                            <Floss floss={JSON.parse(savedPalette.dmc_five)} />
-                            {/* <button value={savedPalette.id} onClick={ this.handleDeleteFromPalettes }>Remove</button> */}
+                            <div className="palette">
+                                <Floss floss={JSON.parse(savedPalette.dmc_one)} />
+                                <Floss floss={JSON.parse(savedPalette.dmc_two)} />
+                                <Floss floss={JSON.parse(savedPalette.dmc_three)} />
+                                <Floss floss={JSON.parse(savedPalette.dmc_four)} />
+                                <Floss floss={JSON.parse(savedPalette.dmc_five)} />
+                                {/* <button value={savedPalette.id} onClick={ this.handleDeleteFromPalettes }>Remove</button> */}
+                            </div>
                         </div>
                     )
                 }

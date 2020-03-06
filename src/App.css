@@ -1,7 +1,7 @@
 
 /* Body Section */
 body {
-    position: relative;
+    /* position: relative; */
     left: 40px;
     background: linear-gradient( rgba(108, 85, 146, .4), rgba(108, 85, 146, .4)), url('./flossOption_5.jpg');
     color: #A18982;
@@ -11,34 +11,35 @@ a {
     text-decoration: none;
  }
 
-button, a {
+button, a, i {
     cursor: pointer;
 }
 
 button:hover {
     background-color: rgba(93, 51, 86, .7);
-    color: rgb(169, 213, 122);
+    color: rgb(181, 212, 147);
 }
 
 button:disabled {
-    background-color: rgba(146, 85, 141, 0.3);
-    cursor: pointer;
+    background-color: rgba(148, 148, 148, 0.3);
+    color: rgb(148, 148, 148);
+    cursor: default;
+}
+
+i.fas.fa-trash-alt {
+    color: rgb(93, 51, 86);
+    margin-left: 15px;
 }
 
 button {
     padding: 8px 10px;
     border: none;
     border-radius: 5px;    
-    background-color: rgb(169, 213, 122);
+    background-color: rgb(174, 207, 138);
     color: #5D3356;
     font-weight: bold;
     font-size: 12px;
 }
-
-/* button.delete {
-    background-color: rgb(85, 146, 90);
-} */
-
 
 /* Header Section */
 .header {
@@ -186,10 +187,19 @@ button {
     height: 100px; 
 }
 
+ul {
+    padding: 0;
+}
+
 .flossContainer {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
 }
+
+/* ul.flossContainer {
+    width: 80%;
+} */
 
 .flossBox {
     background-color: rgba(255, 255, 255, 0.9);
@@ -198,30 +208,24 @@ button {
     flex-direction: column;
     justify-content: space-around;
     list-style-type: none;
-    width: 200px;
-    height: 280px;
-    margin: 10px;
+    width: 170px;
+    height: 260px;
+    margin: 20px 10px;
     padding: 20px 10px;
-    color: rgb(62, 23, 124);
+    color: #333333;
     border-radius: 10px;
 }
 
-.flessBox h3 {
+.flossBox h3 {
     margin: 0;
+    text-align: center;
+    color: #333333
 }
 
 .flossBox h4 {
     margin: 0;
     font-family: 'Open Sans';
-}
-
-.flossBox button {
-    margin: 5px;
-}
-
-.palette {
-    display: flex;
-    flex-flow: row wrap;
+    font-size: 14px;
 }
 
 select {
@@ -229,8 +233,24 @@ select {
   }
 
 .componentContainer {
-    position: relative;
-    left: 100px;
+    /* position: relative; */
+    margin-left: 100px;
+    margin-right: 40px;
 }
 
-/* The sidepanel menu */
+/* Palettes */
+
+.centered {
+    text-align: center;
+}
+
+.palette {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 40px;
+}
+
+div.palette div.flossContainer li {
+    height: 210px;
+}

@@ -17,7 +17,7 @@ main {
     background-color: rgba(255, 255, 255, 0.671);
 }
 
-h1 {
+h1.splash {
     color: #333;
     font-size: 90px;
     font-weight: bolder;
@@ -25,7 +25,7 @@ h1 {
     margin: 20px;
 }
 
-p {
+p.splash {
     color: #333;
     font-family: 'Open Sans';
     font-size: 30px;
@@ -33,7 +33,7 @@ p {
     margin-left: 50px;
 }
 
- button {
+ button.splash {
     font-family: 'Shadows Into Light', cursive;
     font-size: 30px;
     font-weight: bold;
