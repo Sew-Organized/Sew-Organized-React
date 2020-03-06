@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import List from './List.js';
 // import Paging from './Paging.js';
 import request from 'superagent';
+import Nav from './Nav.js';
 
 export default class Colors extends Component {
     // state for the array of flosses to be posted to page
@@ -41,10 +42,11 @@ export default class Colors extends Component {
 
     render() {
         console.log('state:', this.state);
-        return (
+        return (  
             <div>
-                {/* <SearchBar handleClick={this.} /> */}
-                <List handleClick={this.setStash} flosses={this.state.flosses} />
+                <Nav />
+                {/* <SearchBar /> */}
+                <List handleClick={this.setStash} flosses={this.state.flosses} stashedFlosses={this.state.stashed} />
                 {/* <Paging /> */}
             </div>
         )

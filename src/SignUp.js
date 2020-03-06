@@ -21,20 +21,25 @@ export default class SignUp extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='signUpDiv'>
             <h3>Create an account:</h3>
             <form>
-                <h4>Enter your username:</h4>
                         <input 
+                            type='username'
+                            placeholder='username'
                             value={ this.state.displayName } 
                             onChange={(e) => this.setState({ displayName: e.target.value})} />
                         {console.log(this.state)}
-                <h4>Enter your email:</h4>
+                <p></p>
                 <input 
+                    type='email'
+                    placeholder='example@email.com'
                     value={ this.state.email } 
                     onChange={(e) => this.setState({ email: e.target.value})} />
-                <h4>Enter your password:</h4>
+                <p></p>
                 <input 
+                    type='password'
+                    placeholder='password'
                     value={ this.state.password } 
                     onChange={(e) => this.setState({ password: e.target.value})} /><br />
                 <button onClick={ this.handleSignUp }>Sign up</button>
