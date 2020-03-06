@@ -14,6 +14,7 @@ import LogIn from './LogIn.js';
 import Colors from './Colors.js';
 import Palettes from './Palettes.js';
 import SavedPalettes from './SavedPalettes.js';
+import Detail from './Detail.js';
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user'));
 
@@ -34,6 +35,7 @@ export default class App extends Component {
             <Route path='/signup' component={SignUp} />
             <Route path='/login' component={LogIn} />
             <Route path='/colors' component={Colors} />
+            <Route exact path="/detail/:id" component={Detail} />
             <Route path='/user/stash' component={Stash} />
             <Route path='/user/palettes' component={SavedPalettes} />
             <Route path='/palettes' component={Palettes} />

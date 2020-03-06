@@ -44,9 +44,15 @@ export default withRouter(class Floss extends Component {
 
         const deletedFromStash = await request.delete(`https://mighty-mesa-93390.herokuapp.com/api/username/stash/${this.props.floss.id}`)
             .set('Authorization', user.token);
-        
-        
+        };
 
+        findById = (array, id) => {
+            for (let index = 0; index < array.length; index++) {
+                const item = array[index];
+                if (item.dmc_id === id) {
+                    return true;
+                } 
+            }
         };
 
     render() {
@@ -60,22 +66,23 @@ export default withRouter(class Floss extends Component {
         return (
             <div>
                 <li className='flossBox'>
+                    {/* <Link to={`detail/${floss.id}`} key={`link_${dmc_id}`}> */}
                     <h3>{ description }</h3>
+                    {/* </Link> */}
                     <h3>{ 
                             window.location.pathname === '/user/stash'
                                 ? dmc_id
                                 : floss.id
-                         }
+                        }
                     </h3>
                     <div>
                         <div className='hexContainer' style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 
                     </div>
 {/* Write a function to post api/username/stash/id to update quantity*/}
                     
-
-                   { window.location.pathname === '/user/stash'
-                   ? <label for='owned'>Skeins Owned: 
-                   <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
+                { window.location.pathname === '/user/stash'
+                ? <label for='owned'>Skeins Owned: 
+                <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
 {/* Write a function to remove from stash if value=0 */}
                         <option value='0'> 0 </option>
                         <option value='0.5'> 0.5 </option>
@@ -98,7 +105,12 @@ export default withRouter(class Floss extends Component {
                             <button onClick={ this.handleUpdateStash }> Update Stash</button>
                             <button value={this.props.floss.id} onClick={ this.handleDeleteFromStash }> Remove</button>
                         </div>
-                    :   <button onClick={ this.handleAddStash }>Stash</button>
+                    :   <button 
+                            onClick={ this.handleAddStash }
+                            disabled={this.findById(this.props.stashedFlosses, this.props.floss.id) 
+                            ? true
+                            : false } 
+                            >Stash</button>
                 }
                 </li>
             </div>

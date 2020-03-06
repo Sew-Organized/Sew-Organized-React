@@ -22,19 +22,24 @@ export default class LogIn extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='logInDiv'>
                 <form>
                     <h3>Already have an account? Log In:</h3>
-                    <h4>Enter your username:</h4>
                     <input 
+                        type='username'
+                        placeholder='username'
                         value={ this.state.username } 
                         onChange={(e) => this.setState({ username: e.target.value})} />
-                    <h4>Enter your email:</h4>
+                    <p></p>
                     <input 
+                        type='email'
+                        placeholder='example@email.com'
                         value={ this.state.email } 
                         onChange={(e) => this.setState({ email: e.target.value})} />
-                    <h4>Enter your password:</h4>
+                    <p></p>
                     <input 
+                        type='password'
+                        placeholder='password'
                         value={ this.state.password } 
                         onChange={(e) => this.setState({ password: e.target.value})} /><br />
                     <button onClick={this.handleLogIn }>Log in</button>   
