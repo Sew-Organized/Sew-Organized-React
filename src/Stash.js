@@ -38,7 +38,7 @@ state = {
 
     render() {
         return (
-            <div>
+            <div className="componentContainer">
                 <Header />
                 <Nav />
                 <List flosses={this.state.stashed} deleteFlossFromState={this.deleteFlossFromState} /> 

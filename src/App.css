@@ -134,7 +134,18 @@ body {
     height: 100px; 
 }
 
+
+.componentContainer {
+    position: relative;
+    left: 100px;
+}
+
+/* The sidepanel menu */
+
+
+
 /* Floss Section */
+
 
 .flossBox {
     background-color: rgba(255, 255, 255, 0.522);
