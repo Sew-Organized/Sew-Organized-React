@@ -120,7 +120,10 @@ export default withRouter(class Floss extends Component {
                             ? true
                             : false } 
                             >Stash</button>
-                    : ''
+                    : this.props.location.pathname === '/detail/:id'
+                    
+                        
+
                 }
                 </li>
             </div>
