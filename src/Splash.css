@@ -17,21 +17,21 @@ main {
     background-color: rgba(82, 85, 63, 0.671);
 }
 
-h1 {
+h1.splash {
     font-size: 90px;
     font-weight: bolder;
     padding-top: 5px;
     margin: 20px;
 }
 
-p {
+p.splash {
     font-family: 'Open Sans';
     font-size: 30px;
     margin-right: 50px;
     margin-left: 50px;
 }
 
- button {
+ button.splash {
     font-family: 'Shadows Into Light', cursive;
     font-size: 30px;
     font-weight: bold;

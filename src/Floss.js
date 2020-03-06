@@ -105,7 +105,8 @@ export default withRouter(class Floss extends Component {
                 { this.props.location.pathname === '/user/stash'
                     ?   <div>
                             <button className="primary" onClick={ this.handleUpdateStash }> Update Stash</button>
-                            <button className="delete" value={this.props.floss.id} onClick={ this.handleDeleteFromStash }> Remove</button>
+                            <i className="fas fa-trash-alt" value={this.props.floss.id} onClick={ this.handleDeleteFromStash }></i>
+
                         </div>
                     : this.props.location.pathname === '/colors'   
 
