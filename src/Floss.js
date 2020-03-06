@@ -83,7 +83,7 @@ export default withRouter(class Floss extends Component {
 {/* Write a function to post api/username/stash/id to update quantity*/}
                     
                 { this.props.location.pathname === '/user/stash'
-                    ?   <label for='owned'>Skeins Owned: 
+                    ?   <label id='ownedText' for='owned'>Skeins Owned: 
                             <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
         {/* Write a function to remove from stash if value=0 */}
                                 <option value='0'> 0 </option>

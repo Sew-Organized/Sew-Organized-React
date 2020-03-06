@@ -18,14 +18,7 @@ export default withRouter( class Nav extends Component {
                 <React.Fragment>
                     <SideNav className='sideNav'>
                         <SideNav.Toggle />
-                        <SideNav.Nav defaultSelected="About">
-
-                            <NavItem eventKey="About">
-                                <NavIcon><Link to="/About"><i class="fas fa-users"></i></Link></NavIcon>
-                                <NavText>
-                                    <Link to="/About">About</Link>
-                                </NavText>
-                            </NavItem>
+                        <SideNav.Nav defaultSelected="Colors">
 
                             <NavItem eventKey="Colors">
                                 <NavIcon><Link to="/colors"><i class="fas fa-th"></i></Link></NavIcon>
@@ -52,6 +45,13 @@ export default withRouter( class Nav extends Component {
                                 <NavIcon><Link to="/palettes"><i class="fas fa-palette"></i></Link></NavIcon>
                                 <NavText>
                                     <Link to="/palettes">Palette Generator</Link>
+                                </NavText>
+                            </NavItem>
+
+                            <NavItem eventKey="About">
+                                <NavIcon><Link to="/About"><i class="fas fa-users"></i></Link></NavIcon>
+                                <NavText>
+                                    <Link to="/About">About the Devs</Link>
                                 </NavText>
                             </NavItem>
 
