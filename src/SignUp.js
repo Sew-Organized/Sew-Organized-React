@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import request from 'superagent';
+import './SignUp.css'; 
 
 export default class SignUp extends Component {
     state = {
@@ -22,7 +23,7 @@ export default class SignUp extends Component {
     render() {
         return (
             <div className='signUpDiv'>
-            <h3>Create an account:</h3>
+            <h3>Create an Account:</h3>
             <form>
                         <input 
                             type='username'

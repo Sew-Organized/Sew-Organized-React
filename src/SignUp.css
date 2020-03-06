@@ -1,0 +1,16 @@
+.signUpDiv {
+    color: #333;
+    background: rgba(255, 255, 255, 0.671);
+    text-align: center;
+    width: 300px;
+    margin: 200px auto;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 33px;
+}
+
+.signUpDiv button {
+    margin-top:20px;
+}
