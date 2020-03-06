@@ -4,6 +4,11 @@ import './Splash.css';
 
 
 export default class Splash extends Component {
+    handleSignUp = () => {
+        this.props.history.push('/signup')
+    }
+
+
     render() {
 
         return (
@@ -14,11 +19,12 @@ export default class Splash extends Component {
                     <Link to="/about"> About the Developers </Link>
                 </header>
 
-                <main>
+                <main className='splash'>
                     <h1>Sew Organized</h1>
             
-                    <p>This is a paragraph with a little about our app and what it does! Lacrimosa
-                    Dies illa Qua resurget Ex favilla Judicandus Homo reus Lacrimosa Dies illa Qua resurget Ex favilla Judicandus Homo eus Huic ergo Parce deus Pie Jesu Jesu Domine Dona eis Requiem Dona eis Dona eis Requiem Amen</p>
+                    <p>Do your craft supplies look like this? Are you looking for a better solution for your embroidery floss needs?</p>
+
+                    <button className='splashButton' onClick={this.handleSignUp}>Sign up Now!</button>
                 </main>
             </div>
         )

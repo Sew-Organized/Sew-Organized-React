@@ -5,7 +5,6 @@ import {
   Redirect,
   BrowserRouter as Router, } from 'react-router-dom';
 import './App.css';
-import Header from './Header.js';
 import About from './About.js';
 import Stash from './Stash.js';
 import Splash from './Splash.js';
