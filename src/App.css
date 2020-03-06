@@ -1,4 +1,12 @@
 
+/* Body Section */
+body {
+    position: relative;
+    left: 40px;
+    background-image: url('./background.jpg');
+    color: #A18982;
+}
+
 /* Header Section */
 .header {
     margin-left: 1.25em;
@@ -10,11 +18,40 @@
     justify-content: space-evenly;
 }
 
-.splash {
+#splashContainer {
     text-align: center;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+    margin-top: 150px;
+    margin-right: 80px;
+    margin-left: 80px;
+    padding: 20px;
+    border: white 5px solid; 
+    background-color: rgba(82, 85, 63, 0.671);
+}
+
+#splashHeader {
+    font-size: 90px;
+    font-weight: bolder;
+    padding-top: 5px;
+    margin: 20px;
+}
+
+#splashText {
+    font-size: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+#splashButton {
+    font-size: 30px;
+    background-color: #DEDCD0;
+    padding: 10px;
+    margin: 15px;
+}
+
+.splashLinks a {
+    font-size: 40px;
+    color: white;
+    background-color: rgba(82, 85, 63, 0.671);
 }
 
 
@@ -85,7 +122,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: solid 3px;
     list-style-type: none;
     width: 20%;
     float: left;
@@ -98,6 +134,7 @@
     height: 100px; 
 }
 
+
 .componentContainer {
     position: relative;
     left: 100px;
@@ -105,4 +142,11 @@
 
 /* The sidepanel menu */
 
-/* possition relative and then left 50px or something */
+
+
+/* Floss Section */
+
+
+.flossBox {
+    background-color: rgba(255, 255, 255, 0.522);
+}

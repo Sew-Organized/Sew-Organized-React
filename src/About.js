@@ -63,7 +63,7 @@ export default class About extends Component {
                             <img src="janelle.jpeg" alt='janelle' height="150" width="150"></img>
                             <h3>Janelle Mellor</h3>
                         </li>
-                        <p className='aboutText'></p>
+                        <p className='aboutText'>is an avid hiker, kombucha brewer, and sourdough baker</p>
                         <div className="social-media-links">
                             <a href="https://www.linkedin.com/in/janellemellor/" target="_blank">
                                 <img src="li_black.png"></img>
