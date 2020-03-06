@@ -11,12 +11,17 @@ export default class Colors extends Component {
         stashed: [],
     }
 
+    // handleSearch = async (e) => {
+    //     e.preventDefault();
+    //     const flossesData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors/${this.state.searchQuery}`)
+    //     this.setState({ flosses: flossesData.body });
+    // }
+
     async componentDidMount() {
         const user = JSON.parse(localStorage.getItem('user'));
         // put in api request link for rendering data
         const data = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors
         `).set('Authorization', user.token);
-        console.log('data:', data);
         // double check data format that sets state
         const stashedData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/username/stash`).set('Authorization', user.token);
         
@@ -38,7 +43,7 @@ export default class Colors extends Component {
         console.log('state:', this.state);
         return (
             <div>
-                {/* <SearchBar /> */}
+                {/* <SearchBar handleClick={this.} /> */}
                 <List handleClick={this.setStash} flosses={this.state.flosses} />
                 {/* <Paging /> */}
             </div>
