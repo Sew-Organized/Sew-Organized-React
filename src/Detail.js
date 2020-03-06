@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { getFloss } from './services/API.js';
 import Floss from './Floss.js';
 import request from 'superagent';
+import Nav from './Nav.js';
+import Header from './Header.js';
 // import RandomPalette from 'RandomPalette.js';
 
 export default class Detail extends Component {
@@ -17,8 +19,9 @@ export default class Detail extends Component {
 
         const data = await (await getFloss(this.props.match.params.id, user));
         if (data.body) {
-            console.log(data.body);
+            console.log('data.body:', data.body);
             this.setState({ floss: data.body })
+            console.log('state', this.state.floss);
         }
         const dmcData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors`)
 
@@ -88,8 +91,10 @@ export default class Detail extends Component {
     render() {
         return (
             <div>
+                <Header />
+                <Nav />
                 <ul className='flossDetailContainer'>
-                    {/* <Floss floss={ this.state.floss } /> */}
+                    <Floss floss={ this.state.floss } />
                 </ul>
                 <p>Don't have the color your project calls for? Click below to generate similar DMC colors:</p>
                 <button onClick={this.generateApiColors}>Generate Color Matches</button>
@@ -99,7 +104,9 @@ export default class Detail extends Component {
                     <div>
                         {/* <RandomPalette palette={this.state.matchedDMCObjects} /> */}
                     </div>
-                    : '' }
+                    : '' 
+                    }
+                    {console.log('matched array in state', this.state.matchedDMCObjects)}
                 </div>
             </div>
         )
