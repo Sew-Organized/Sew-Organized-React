@@ -1,4 +1,12 @@
 
+/* Body Section */
+body {
+    position: relative;
+    left: 40px;
+    background-image: url('./background.jpg');
+    color: #A18982;
+}
+
 /* Header Section */
 .header {
     margin-left: 1.25em;
@@ -85,7 +93,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: solid 3px;
     list-style-type: none;
     width: 20%;
     float: left;
@@ -98,6 +105,8 @@
     height: 100px; 
 }
 
-/* The sidepanel menu */
+/* Floss Section */
 
-/* possition relative and then left 50px or something */
+.flossBox {
+    background-color: rgba(255, 255, 255, 0.522);
+}
