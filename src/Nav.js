@@ -21,42 +21,42 @@ export default withRouter( class Nav extends Component {
                         <SideNav.Nav defaultSelected="About">
 
                             <NavItem eventKey="About">
-                                <NavIcon></NavIcon>
+                                <NavIcon><Link to="/About"><i class="fas fa-users"></i></Link></NavIcon>
                                 <NavText>
                                     <Link to="/About">About</Link>
                                 </NavText>
                             </NavItem>
 
                             <NavItem eventKey="Colors">
-                                <NavIcon></NavIcon>
+                                <NavIcon><Link to="/colors"><i class="fas fa-th"></i></Link></NavIcon>
                                 <NavText>
                                     <Link to="/colors">All Colors</Link>
                                 </NavText>
                             </NavItem>
 
                             <NavItem eventKey="Stash">
-                                <NavIcon></NavIcon>
+                                <NavIcon><Link to="/user/stash"><i class="fas fa-bookmark"></i></Link></NavIcon>
                                 <NavText>
                                     <Link to="/user/stash">My Stash</Link>
                                 </NavText>
                             </NavItem>
 
                             <NavItem eventKey="MyPalettes">
-                                <NavIcon></NavIcon>
+                                <NavIcon><Link to="/user/palettes"><i class="fas fa-swatchbook"></i></Link></NavIcon>
                                 <NavText>
                                     <Link to="/user/palettes">My Palettes</Link>
                                 </NavText>
                             </NavItem>
 
                             <NavItem eventKey="Palettes">
-                                <NavIcon></NavIcon>
+                                <NavIcon><Link to="/palettes"><i class="fas fa-palette"></i></Link></NavIcon>
                                 <NavText>
                                     <Link to="/palettes">Palette Generator</Link>
                                 </NavText>
                             </NavItem>
 
                             <NavItem eventKey="LogOut">
-                                <NavIcon></NavIcon>
+                                <NavIcon><Link to="/splash"><i class="fas fa-sign-out-alt"></i></Link></NavIcon>
                                 <NavText>
                                     <div onClick={this.logout}>Log Out</div>
                                 </NavText>
