@@ -66,9 +66,9 @@ export default withRouter(class Floss extends Component {
         return (
             <div>
                 <li className='flossBox'>
-                    {/* <Link to={`detail/${floss.id}`} key={`link_${dmc_id}`}> */}
+                    <Link to={`detail/${floss.id}`} key={`link_${dmc_id}`}>
                     <h3>{ description }</h3>
-                    {/* </Link> */}
+                    </Link>
                     <h3>{ 
                             this.props.location.pathname === '/user/stash'
                                 ? dmc_id
