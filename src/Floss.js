@@ -91,7 +91,7 @@ export default withRouter(class Floss extends Component {
                         <option value='6'> 5+ </option>
                     </select>
                     </label>
-                    : <p></p>
+                    : ''
                     }
                 { window.location.pathname === '/user/stash'
                     ?   <div>
