@@ -3,7 +3,7 @@
 body {
     position: relative;
     left: 40px;
-    background-image: url('.background.jpg');
+    background-image: url('./background.jpg');
     color: #A18982;
 }
 
