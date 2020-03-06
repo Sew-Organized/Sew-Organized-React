@@ -23,7 +23,7 @@ export default class SignUp extends Component {
     render() {
         return (
             <div className='signUpDiv'>
-            <h3>Create an account:</h3>
+            <h3>Create an Account:</h3>
             <form>
                         <input 
                             type='username'

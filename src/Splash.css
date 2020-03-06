@@ -9,15 +9,16 @@ body {
 
 main {
     text-align: center;
-    margin-top: 150px;
-    margin-right: 150px;
-    margin-left: 80px;
+    margin-top: 200px;
+    margin-right: 300px;
+    margin-left: 200px;
     padding: 20px;
-    border: white 5px solid; 
-    background-color: rgba(82, 85, 63, 0.671);
+    border: none; 
+    background-color: rgba(255, 255, 255, 0.671);
 }
 
 h1 {
+    color: #333;
     font-size: 90px;
     font-weight: bolder;
     padding-top: 5px;
@@ -25,6 +26,7 @@ h1 {
 }
 
 p {
+    color: #333;
     font-family: 'Open Sans';
     font-size: 30px;
     margin-right: 50px;
