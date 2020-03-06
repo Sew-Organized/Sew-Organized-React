@@ -1,12 +1,12 @@
 /*! react-sidenav v0.5.0 | (c) 2020 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-sidenav */
 .sidenav---sidenav---_2tBP {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     z-index: 1006;
     min-width: 64px;
-    background: indigo;
+    background: #522D4E;
     -webkit-transition: min-width 0.2s;
     -moz-transition: min-width 0.2s;
     -o-transition: min-width 0.2s;
@@ -228,7 +228,7 @@
     white-space: nowrap;
     text-decoration: none;
     color: #fff;
-    font-size: 14px;
+    font-size: 19px;
     cursor: pointer;
   }
   .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T:focus {

@@ -2,10 +2,16 @@ import React, { Component } from 'react'
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import './Nav.css';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
-export default class Nav extends Component {
+export default withRouter( class Nav extends Component {
+
+    logout = () => {
+        localStorage.clear();
+        this.props.history.push('/splash');
+    }
+
     render() {
         return (
             <div>
@@ -49,10 +55,17 @@ export default class Nav extends Component {
                                 </NavText>
                             </NavItem>
 
+                            <NavItem eventKey="LogOut">
+                                <NavIcon></NavIcon>
+                                <NavText>
+                                    <div onClick={this.logout}>Log Out</div>
+                                </NavText>
+                            </NavItem>
+
                         </SideNav.Nav>
                     </SideNav>
                 </React.Fragment>
             </div>
         )
     }
-}
+})
