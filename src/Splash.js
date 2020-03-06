@@ -19,7 +19,9 @@ export default class Splash extends Component {
                 <main>
                     <h1>Sew Organized</h1>
             
-                    <p>Do your craft supplies look like this? Are you looking for a better solution for your embroidery floss needs?</p>
+                    <p>Do your craft supplies look like this? 
+                    <br />
+                    Are you looking for a better solution for your embroidery floss needs?</p>
 
                     <button id='signUpButton' onClick={this.handleSignUp}>Sign up Now!</button>
 

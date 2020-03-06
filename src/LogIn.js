@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import request from 'superagent';
+import './LogIn.css';
 
 
 export default class LogIn extends Component {
@@ -24,7 +25,7 @@ export default class LogIn extends Component {
         return (
             <div className='logInDiv'>
                 <form>
-                    <h3>Already have an account? Log In:</h3>
+                    <h3>Log In:</h3>
                     <input 
                         type='username'
                         placeholder='username'
