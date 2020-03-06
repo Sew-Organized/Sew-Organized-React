@@ -37,7 +37,7 @@ export default class SavedPalettes extends Component {
 
     render() {
         return(
-            <div>
+            <div className="componentContainer">
                 <Header />
                 <Nav />
                 <h1>Saved palettes</h1>

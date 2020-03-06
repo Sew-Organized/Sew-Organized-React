@@ -9,7 +9,7 @@ export default class RandomPalette extends Component {
     render() {
         console.log(this.props);
         return (
-            <div>
+            <div className="componentContainer">
                 <div className="paletteContainer">
                     <div className="palette">
                         { this.props.palette.map(floss => 

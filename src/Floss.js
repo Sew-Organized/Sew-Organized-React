@@ -19,6 +19,8 @@ export default withRouter(class Floss extends Component {
         };
 
         this.props.setStash(myStash);
+
+        this.refs.btn.setAttribute('disabled', 'disabled');
         
         const stash = await request.post(`https://mighty-mesa-93390.herokuapp.com/api/username/stash`, {
             quantity: this.state.quantityInput,
@@ -107,7 +109,8 @@ export default withRouter(class Floss extends Component {
                         </div>
                     : this.props.location.pathname === '/colors'   
                         ? <button 
-                            onClick={ this.handleAddStash }
+                            onClick={ this.handleAddStash } 
+                            ref="btn"
                             disabled={this.findById(this.props.stashedFlosses, this.props.floss.id) 
                             ? true
                             : false } 

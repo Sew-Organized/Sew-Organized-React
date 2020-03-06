@@ -20,19 +20,19 @@ export default class RandomPalette extends Component {
             dmcFour: this.props.palette[3],
             dmcFive: this.props.palette[4]
         }).set('Authorization', user.token);
-        this.refs.btn.setAttribute('disabled', 'disabled');
+
         this.setState({ paletteName: '' });
-        this.props.handleButtonChange();
+        
     }
 
     render() {
         console.log(this.props);
         return (
-            <div>
+            <div className="componentContainer">
                 <Nav />
                 <div className="paletteContainer">
                     <input placeholder="Name Your Palette" value={this.state.paletteName} onChange={(e) => this.setState({ paletteName: e.target.value })} />
-                        <button ref="btn" onClick={this.savePalette}>Save Palette to Stash</button>
+                        <button onClick={this.savePalette}>Save Palette to Stash</button>
                     <div className="palette">
                         { this.props.palette.map(floss => 
                         <Floss floss={floss} />

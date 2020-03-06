@@ -5,7 +5,7 @@ import Header from './Header.js';
 export default class About extends Component {
     render() {
         return (
-            <>
+            <div className="componentContainer">
             <Header />
             <Nav />
             <div className='aboutDiv'>
@@ -91,7 +91,7 @@ export default class About extends Component {
                     </div>
                 </ul>
             </div>
-            </>
+            </div>
         )
     }
 }
