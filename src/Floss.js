@@ -70,7 +70,7 @@ export default withRouter(class Floss extends Component {
                     <h3>{ description }</h3>
                     {/* </Link> */}
                     <h3>{ 
-                            window.location.pathname === '/user/stash'
+                            this.props.location.pathname === '/user/stash'
                                 ? dmc_id
                                 : floss.id
                         }
@@ -80,37 +80,39 @@ export default withRouter(class Floss extends Component {
                     </div>
 {/* Write a function to post api/username/stash/id to update quantity*/}
                     
-                { window.location.pathname === '/user/stash'
-                ? <label for='owned'>Skeins Owned: 
-                <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
-{/* Write a function to remove from stash if value=0 */}
-                        <option value='0'> 0 </option>
-                        <option value='0.5'> 0.5 </option>
-                        <option value='1'> 1 </option>
-                        <option value='1.5'> 1.5 </option>
-                        <option value='2'> 2 </option>
-                        <option value='2.5'> 2.5 </option>
-                        <option value='3'> 3 </option>
-                        <option value='3.5'> 3.5 </option>
-                        <option value='4'> 4 </option>
-                        <option value='4.5'> 4.5 </option>
-                        <option value='5'> 5 </option>
-                        <option value='6'> 5+ </option>
-                    </select>
-                    </label>
+                { this.props.location.pathname === '/user/stash'
+                    ?   <label for='owned'>Skeins Owned: 
+                            <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
+        {/* Write a function to remove from stash if value=0 */}
+                                <option value='0'> 0 </option>
+                                <option value='0.5'> 0.5 </option>
+                                <option value='1'> 1 </option>
+                                <option value='1.5'> 1.5 </option>
+                                <option value='2'> 2 </option>
+                                <option value='2.5'> 2.5 </option>
+                                <option value='3'> 3 </option>
+                                <option value='3.5'> 3.5 </option>
+                                <option value='4'> 4 </option>
+                                <option value='4.5'> 4.5 </option>
+                                <option value='5'> 5 </option>
+                                <option value='6'> 5+ </option>
+                            </select>
+                        </label>
                     : ''
                     }
-                { window.location.pathname === '/user/stash'
+                { this.props.location.pathname === '/user/stash'
                     ?   <div>
                             <button onClick={ this.handleUpdateStash }> Update Stash</button>
                             <button value={this.props.floss.id} onClick={ this.handleDeleteFromStash }> Remove</button>
                         </div>
-                    :   <button 
+                    : this.props.location.pathname === '/colors'   
+                        ? <button 
                             onClick={ this.handleAddStash }
                             disabled={this.findById(this.props.stashedFlosses, this.props.floss.id) 
                             ? true
                             : false } 
                             >Stash</button>
+                    : ''
                 }
                 </li>
             </div>
