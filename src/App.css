@@ -311,3 +311,21 @@ div.palette div.flossContainer li {
     flex-direction: column;
     align-items: center;
 }
+
+div.detailFloss li {
+    height: 210px;
+}
+
+div.detailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.detailFlossContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 45px;
+}
