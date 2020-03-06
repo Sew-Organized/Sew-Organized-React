@@ -4,6 +4,7 @@ import List from './List.js';
 // import Paging from './Paging.js';
 import request from 'superagent';
 import Nav from './Nav.js';
+import Header from './Header.js'
 
 export default class Colors extends Component {
     // state for the array of flosses to be posted to page
@@ -39,6 +40,7 @@ export default class Colors extends Component {
         console.log('state:', this.state);
         return (  
             <div>
+                <Header />
                 <Nav />
                 {/* <SearchBar /> */}
                 <List handleClick={this.setStash} flosses={this.state.flosses} stashedFlosses={this.state.stashed} />

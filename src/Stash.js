@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import List from './List.js';
 import request from 'superagent'
 import Nav from './Nav.js';
+import Header from './Header.js';
 
 export default class Stash extends Component {
 state = {
@@ -38,6 +39,7 @@ state = {
     render() {
         return (
             <div>
+                <Header />
                 <Nav />
                 <List flosses={this.state.stashed} deleteFlossFromState={this.deleteFlossFromState} /> 
             </div>

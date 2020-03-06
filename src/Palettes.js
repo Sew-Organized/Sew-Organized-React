@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import RandomPalette from './RandomPalette.js';
 import request from 'superagent';
 import Nav from './Nav.js';
+import Header from './Header.js';
 
 export default class Palettes extends Component {
     state = {
@@ -89,6 +90,7 @@ export default class Palettes extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <Nav />
                 <p>Looking for color inspiration? Click the button to generate a palette of floss colors to spark your next project idea.</p>
                 <button onClick={this.generateApiColors}>Generate Color Palette</button>

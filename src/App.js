@@ -23,13 +23,14 @@ export default class App extends Component {
     return (
       <div>
         <Router>
-          <Header />
+        
           <Switch>
             <Route exact path='/' render={() => 
               isLoggedIn()
                 ? <Redirect to='/user/stash' />
                 : <Redirect to='/splash' />
             } />
+            
             <Route path='/splash' component={Splash} />
             <Route path='/about' component={About} />
             <Route path='/signup' component={SignUp} />

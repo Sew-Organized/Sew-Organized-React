@@ -3,6 +3,7 @@ import request from 'superagent';
 import Floss from './Floss.js';
 import Nav from './Nav.js';
 import RandomPalette from './RandomPalette';
+import Header from './Header.js';
 
 
 export default class SavedPalettes extends Component {
@@ -37,6 +38,7 @@ export default class SavedPalettes extends Component {
     render() {
         return(
             <div>
+                <Header />
                 <Nav />
                 <h1>Saved palettes</h1>
                 <div className="paletteContainer">
