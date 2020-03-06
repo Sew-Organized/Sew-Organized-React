@@ -26,13 +26,14 @@ export default class RandomPalette extends Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="componentContainer">
                 <Nav />
                 <div className="paletteContainer">
-                    <input placeholder="Name Your Palette" value={this.state.paletteName} onChange={(e) => this.setState({ paletteName: e.target.value })} />
-                        <button className="primary" onClick={this.savePalette}>Save Palette to Stash</button>
+                    <div className="flexRightAlign">
+                        <input placeholder="Name Your Palette" value={this.state.paletteName} onChange={(e) => this.setState({ paletteName: e.target.value })} />
+                        <button className="primary" onClick={this.savePalette}>Save</button>
+                    </div>
                     <div className="palette">
                         { this.props.palette.map(floss => 
                         <Floss floss={floss} />
