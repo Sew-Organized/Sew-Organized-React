@@ -4,6 +4,7 @@ import List from './List.js';
 // import Paging from './Paging.js';
 import request from 'superagent';
 import Nav from './Nav.js';
+import Header from './Header.js'
 
 export default class Colors extends Component {
     // state for the array of flosses to be posted to page
@@ -12,12 +13,17 @@ export default class Colors extends Component {
         stashed: [],
     }
 
+    // handleSearch = async (e) => {
+    //     e.preventDefault();
+    //     const flossesData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors/${this.state.searchQuery}`)
+    //     this.setState({ flosses: flossesData.body });
+    // }
+
     async componentDidMount() {
         const user = JSON.parse(localStorage.getItem('user'));
         // put in api request link for rendering data
         const data = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors
         `).set('Authorization', user.token);
-        console.log('data:', data);
         // double check data format that sets state
         const stashedData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/username/stash`).set('Authorization', user.token);
         
@@ -39,12 +45,12 @@ export default class Colors extends Component {
         console.log('state:', this.state);
         return (  
             <div>
+                <Header />
                 <Nav />
                 {/* <SearchBar /> */}
                 <List handleClick={this.setStash} flosses={this.state.flosses} stashedFlosses={this.state.stashed} />
                 {/* <Paging /> */}
             </div>
-
         )
     }
 }

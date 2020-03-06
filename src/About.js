@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import Nav from './Nav.js';
+import Header from './Header.js';
 
 export default class About extends Component {
     render() {
         return (
             <>
+            <Header />
             <Nav />
             <div className='aboutDiv'>
                 <h2 id='aboutDevs'>About the Developers</h2>

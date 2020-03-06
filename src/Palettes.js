@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import RandomPalette from './RandomPalette.js';
 import request from 'superagent';
 import Nav from './Nav.js';
+import Header from './Header.js';
 
 export default class Palettes extends Component {
     state = {
@@ -26,7 +27,10 @@ export default class Palettes extends Component {
     // generates five random colors from color api, converts to nearest DMC colors, and changes format of data
     generateApiColors = async () => {
         const randomPalette = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/scheme`);
-        this.setState({ randomPalette: randomPalette.body });
+        this.setState({ 
+            randomPalette: randomPalette.body,
+            buttonDisabled: false
+         });
         this.dmcMatches();
     };
 
@@ -86,9 +90,14 @@ export default class Palettes extends Component {
         }
     };
 
+    handleButtonChange = () => {
+        this.setState({ buttonDisabled: true })
+    }
+
     render() {
         return (
             <div>
+                <Header />
                 <Nav />
                 <p>Looking for color inspiration? Click the button to generate a palette of floss colors to spark your next project idea.</p>
                 <button onClick={this.generateApiColors}>Generate Color Palette</button>
@@ -96,7 +105,7 @@ export default class Palettes extends Component {
                     { this.state.matchedDMCObjects 
                     ? 
                     <div>
-                        <RandomPalette palette={this.state.matchedDMCObjects} />
+                        <RandomPalette handleButtonChange={this.handleButtonChange} buttonDisabled={this.state.buttonDisabled} palette={this.state.matchedDMCObjects} />
                     </div>
                     : '' }
                 </div>

@@ -14,23 +14,21 @@ export default class Detail extends Component {
 
     async componentDidMount() {
         const user = JSON.parse(localStorage.getItem('user'));
+
         const data = await (await getFloss(this.props.match.params.id, user));
         if (data.body) {
+            console.log(data.body);
             this.setState({ floss: data.body })
         }
-        // put in api request link for rendering data
-        const palettesData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/username/palettes
-        `).set('Authorization', user.token);
-
         const dmcData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors`)
 
         // double check data format that sets state
-        this.setState({ palettes: palettesData.body, dmcData: dmcData.body })
+        this.setState({ dmcData: dmcData.body })
     }
 
         // generates five random colors from color api, converts to nearest DMC colors, and changes format of data
         generateApiColors = async () => {
-            const randomPalette = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/scheme`);
+            const randomPalette = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/scheme/:id`);
             this.setState({ randomPalette: randomPalette.body });
             this.dmcMatches();
         };
@@ -91,7 +89,7 @@ export default class Detail extends Component {
         return (
             <div>
                 <ul className='flossDetailContainer'>
-                    <Floss floss={ this.state.floss } />
+                    {/* <Floss floss={ this.state.floss } /> */}
                 </ul>
                 <p>Don't have the color your project calls for? Click below to generate similar DMC colors:</p>
                 <button onClick={this.generateApiColors}>Generate Color Matches</button>
@@ -107,3 +105,57 @@ export default class Detail extends Component {
         )
     }
 }
+
+
+// import React, { Component } from 'react'
+// import { getFloss } from './services/API.js';
+// import Floss from './Floss.js';
+// // import request from 'superagent';
+// // import RandomPalette from 'RandomPalette.js';
+
+// export default class Detail extends Component {
+//         state = {
+//             floss: {},
+//         };
+
+//     async componentDidMount() {
+//         const user = JSON.parse(localStorage.getItem('user'));
+
+//         const data = await (await getFloss(this.props.match.params.id, user));
+//         if (data.body) {
+//             console.log(data.body);
+//             this.setState({ floss: data.body })
+//         }
+//     }
+
+//     generateApiColors = async() => {
+//         const paletteData = await (await getFloss(this.props.match.params.id, user));
+//         if (data.body) {
+//             console.log(data.body);
+//             this.setState({ floss: data.body })
+//         }
+
+
+//         /api/scheme/:id
+//     }
+
+//     render() {
+//         return (
+//             <div>
+//                 <ul className='flossDetailContainer'>
+//                     {/* <Floss floss={ this.state.floss } /> */}
+//                 </ul>
+//                 <p>Don't have the color your project calls for? Click below to generate similar DMC colors:</p>
+//                 <button onClick={this.generateApiColors}>Generate Color Matches</button>
+//                 <div>
+//                     { this.state.matchedDMCObjects 
+//                     ? 
+//                     <div>
+//                         {/* <RandomPalette palette={this.state.matchedDMCObjects} /> */}
+//                     </div>
+//                     : '' }
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
