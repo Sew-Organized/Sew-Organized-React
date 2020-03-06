@@ -43,7 +43,7 @@ export default class SignUp extends Component {
                     placeholder='password'
                     value={ this.state.password } 
                     onChange={(e) => this.setState({ password: e.target.value})} /><br />
-                <button className="primary" onClick={ this.handleSignUp }>Sign up</button>
+                <button className="primary signUpButton" onClick={ this.handleSignUp }>Sign up</button>
             </form>
         </div>
         )

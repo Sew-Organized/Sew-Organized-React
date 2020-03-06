@@ -7,10 +7,10 @@
     padding: 20px;
 }
 
-h3 {
+.logInDiv h3 {
     font-size: 33px;
 }
 
-.signUpDiv button {
+.signUpButton, .logInButton {
     margin-top:20px;
 }
