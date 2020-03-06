@@ -44,7 +44,7 @@ export default class Colors extends Component {
     render() {
         console.log('state:', this.state);
         return (  
-            <div>
+            <div className="componentContainer">
                 <Header />
                 <Nav />
                 {/* <SearchBar /> */}

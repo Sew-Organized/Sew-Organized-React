@@ -90,13 +90,9 @@ export default class Palettes extends Component {
         }
     };
 
-    handleButtonChange = () => {
-        this.setState({ buttonDisabled: true })
-    }
-
     render() {
         return (
-            <div>
+            <div className="componentContainer">
                 <Header />
                 <Nav />
                 <p>Looking for color inspiration? Click the button to generate a palette of floss colors to spark your next project idea.</p>
@@ -105,7 +101,7 @@ export default class Palettes extends Component {
                     { this.state.matchedDMCObjects 
                     ? 
                     <div>
-                        <RandomPalette handleButtonChange={this.handleButtonChange} buttonDisabled={this.state.buttonDisabled} palette={this.state.matchedDMCObjects} />
+                        <RandomPalette  palette={this.state.matchedDMCObjects} />
                     </div>
                     : '' }
                 </div>

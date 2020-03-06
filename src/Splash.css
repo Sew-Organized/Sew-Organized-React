@@ -7,10 +7,51 @@ body {
     color: white;
 }
 
-.splashLinks {
-    font-family: 'Shadows Into Light', cursive;
+main {
+    text-align: center;
+    margin-top: 150px;
+    margin-right: 150px;
+    margin-left: 80px;
+    padding: 20px;
+    border: white 5px solid; 
+    background-color: rgba(82, 85, 63, 0.671);
+}
+
+h1 {
+    font-size: 90px;
+    font-weight: bolder;
+    padding-top: 5px;
+    margin: 20px;
 }
 
 p {
     font-family: 'Open Sans';
+    font-size: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
+
+ button {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    background-color: #C79682;
+    padding: 10px;
+    margin: 15px;
+}
+
+#signUpButton {
+    color: #8D4D2F;
+    background-color: #C79682;
+}
+
+#signInButton {
+    color: #C79682;
+    background-color: #8D4D2F;
+}
+
+/* DEDCD0; */
+/* 654551 */
+
+/* 8D4D2F */

@@ -19,8 +19,6 @@ export default withRouter(class Floss extends Component {
         };
 
         this.props.setStash(myStash);
-
-        this.refs.btn.setAttribute('disabled', 'disabled');
         
         const stash = await request.post(`https://mighty-mesa-93390.herokuapp.com/api/username/stash`, {
             quantity: this.state.quantityInput,
@@ -66,22 +64,21 @@ export default withRouter(class Floss extends Component {
         } = floss;
 
         return (
-            <div className="flossContainer">
+            <div>
                 <li className='flossBox'>
                     <Link to={`detail/${floss.id}`} key={`link_${dmc_id}`}>
                     <h3>{ description }</h3>
                     </Link>
-                    <h4>{ 
+                    <h3>{ 
                             this.props.location.pathname === '/user/stash'
                                 ? dmc_id
                                 : floss.id
                         }
-                    </h4>
+                    </h3>
                     <div>
                         <div className='hexContainer' style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 
                     </div>
-{/* Write a function to post api/username/stash/id to update quantity*/}
-                    
+{/* Write a function to post api/username/stash/id to update quantity*/}                    
                 { this.props.location.pathname === '/user/stash'
                     ?   <label for='owned'>Skeins Owned: 
                             <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
@@ -104,15 +101,12 @@ export default withRouter(class Floss extends Component {
                     }
                 { this.props.location.pathname === '/user/stash'
                     ?   <div>
-                            <button className="primary" onClick={ this.handleUpdateStash }> Update Stash</button>
-                            <button className="delete" value={this.props.floss.id} onClick={ this.handleDeleteFromStash }> Remove</button>
+                            <button onClick={ this.handleUpdateStash }> Update Stash</button>
+                            <button value={this.props.floss.id} onClick={ this.handleDeleteFromStash }> Remove</button>
                         </div>
                     : this.props.location.pathname === '/colors'   
-
-                        ? <button className="primary"
-                            onClick={ this.handleAddStash } 
-                            ref="btn"
-                
+                        ? <button 
+                            onClick={ this.handleAddStash }
                             disabled={this.findById(this.props.stashedFlosses, this.props.floss.id) 
                             ? true
                             : false } 
@@ -123,6 +117,4 @@ export default withRouter(class Floss extends Component {
             </div>
         )
     }
-
 })  
-

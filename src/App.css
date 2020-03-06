@@ -7,9 +7,42 @@ body {
     color: #A18982;
 }
 
+a {
+    text-decoration: none;
+ }
+
+button, a {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(93, 51, 86, .7);
+    color: rgb(169, 213, 122);
+}
+
+button:disabled {
+    background-color: rgba(146, 85, 141, 0.3);
+    cursor: pointer;
+}
+
+button {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;    
+    background-color: rgb(169, 213, 122);
+    color: #5D3356;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* button.delete {
+    background-color: rgb(85, 146, 90);
+} */
+
+
 /* Header Section */
 .header {
-    margin-left: 1.25em;
+    margin-left: 1.5em;
 }
 
 /* Splash Section */
@@ -54,7 +87,6 @@ body {
     background-color: rgba(82, 85, 63, 0.671);
 }
 
-
 /* SignUp Section */
 .signUpDiv {
     text-align: center;
@@ -81,20 +113,36 @@ body {
     height: 200px;
     width: 150px;
     font-size: 14px;
+    font-weight: bold;
+    color: rgb(74, 87, 79);
+    text-shadow: 2px 0px  rgb(143, 168, 153);
+}
+
+.dannieLI {
+    margin: 0.50em;
+    padding: 0.50em;
+    padding-top: 1.25em;
+    height: 200px;
+    width: 150px;
+    font-size: 13.5px;
+    font-weight: bold;
+    color: rgb(74, 87, 79);
+    text-shadow: 2px 0px  rgb(143, 168, 153);
 }
 
 .aboutText {
     word-wrap: wrap;
-    height: 80px;
+    height: 120px;
     width: 150px;
     font-size: 14px;
     margin: 0.50em;
     padding: 0.50em;
-    border: solid black 
+    border: solid black;
+    background-color: rgba(82, 85, 63, 0.671);
 }
 
 #aboutDevs {
-    margin-left: 3.5em;
+    margin-left: 2em;
     font-style: italic;
 }
 
@@ -118,13 +166,23 @@ body {
     background-color: rgb(138, 19, 91);
 }
 
+.social-media-links {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    margin-left: 35%;
+}
+
+.linked {
+    margin-right: 4px;
+}
+
+/* Floss Section */
 .hexContainer {
     width: 100px;
     height: 100px; 
 }
-
-/* Floss Section */
-
 
 .flossContainer {
     display: flex;
@@ -140,7 +198,6 @@ body {
     list-style-type: none;
     width: 200px;
     height: 280px;
-    /* float: left; */
     margin: 10px;
     padding: 20px 10px;
     color: rgb(62, 23, 124);
@@ -165,35 +222,13 @@ body {
     flex-flow: row wrap;
 }
 
-button, a {
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: rgba(93, 51, 86, .7);
-    color: rgb(169, 213, 122);
-
-}
-button:disabled {
-    background-color: rgba(146, 85, 141, 0.3);
-    cursor: pointer;
-}
-
-button {
-    padding: 8px 10px;
-    border: none;
-    border-radius: 5px;    
-    background-color: rgb(169, 213, 122);
-    color: #5D3356;
-    font-weight: bold;
-    font-size: 12px;
-
-}
-
-/* button.delete {
-    background-color: rgb(85, 146, 90);
-} */
-
 select {
     margin: 5px;
+  }
+
+.componentContainer {
+    position: relative;
+    left: 100px;
 }
+
+/* The sidepanel menu */
