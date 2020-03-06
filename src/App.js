@@ -29,7 +29,6 @@ export default class App extends Component {
                 ? <Redirect to='/user/stash' />
                 : <Redirect to='/splash' />
             } />
-            
             <Route path='/splash' component={Splash} />
             <Route path='/about' component={About} />
             <Route path='/signup' component={SignUp} />
@@ -39,7 +38,6 @@ export default class App extends Component {
             <Route path='/user/stash' component={Stash} />
             <Route path='/user/palettes' component={SavedPalettes} />
             <Route path='/palettes' component={Palettes} />
-            {/* talked about changing this route to the username dynamically */}
           </Switch>
         </Router>
       </div>

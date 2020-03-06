@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import request from 'superagent';
 import Floss from './Floss.js';
 import Nav from './Nav.js';
-import RandomPalette from './RandomPalette';
 import Header from './Header.js';
 
 

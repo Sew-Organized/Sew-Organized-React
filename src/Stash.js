@@ -12,7 +12,6 @@ state = {
     async componentDidMount() {
         const user = JSON.parse(localStorage.getItem('user'));
 
-        // go get the user's stashed flosses from the database and authorize the user to get their flosses
         const data = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/username/stash`).set('Authorization', user.token);
 
         this.setState({
@@ -20,6 +19,7 @@ state = {
         })
     }
 
+    
     deleteFlossFromState = (e) => {
         e.preventDefault();
 

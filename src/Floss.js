@@ -8,9 +8,10 @@ export default withRouter(class Floss extends Component {
         quantityInput: this.props.floss.quantity || 0,
     }
 
-    //  callback that touches parent state
+    // callback 
     handleAddStash = async (e) => {
         e.preventDefault();
+
         const user = JSON.parse(localStorage.getItem('user'));
         
         const myStash = {
@@ -27,19 +28,19 @@ export default withRouter(class Floss extends Component {
             dmcId: this.props.floss.id }).set('Authorization', user.token);   
     }
 
+
     handleUpdateStash = async (e) => {
         e.preventDefault();
 
         const user = JSON.parse(localStorage.getItem('user'));
 
         const updateStash = await request.put(`https://mighty-mesa-93390.herokuapp.com/api/username/stash/${this.props.floss.id}`, {
-            quantity: this.state.quantityInput
-        }).set('Authorization', user.token);
-        };
+            quantity: this.state.quantityInput}).set('Authorization', user.token);
+    };
+
 
     handleDeleteFromStash = async (e) => {
         e.preventDefault();
-
         const user = JSON.parse(localStorage.getItem('user'));
 
         this.props.deleteFlossFromState(e);
@@ -47,6 +48,7 @@ export default withRouter(class Floss extends Component {
         const deletedFromStash = await request.delete(`https://mighty-mesa-93390.herokuapp.com/api/username/stash/${this.props.floss.id}`)
             .set('Authorization', user.token);
         };
+
 
         findById = (array, id) => {
             for (let index = 0; index < array.length; index++) {
@@ -56,6 +58,7 @@ export default withRouter(class Floss extends Component {
                 } 
             }
         };
+
 
     render() {
         const { floss } = this.props;
@@ -80,12 +83,11 @@ export default withRouter(class Floss extends Component {
                     <div>
                         <div className='hexContainer' style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 
                     </div>
-{/* Write a function to post api/username/stash/id to update quantity*/}
                     
                 { this.props.location.pathname === '/user/stash'
                     ?   <label for='owned'>Skeins Owned: 
                             <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
-        {/* Write a function to remove from stash if value=0 */}
+        
                                 <option value='0'> 0 </option>
                                 <option value='0.5'> 0.5 </option>
                                 <option value='1'> 1 </option>
