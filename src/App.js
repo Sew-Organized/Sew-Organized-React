@@ -26,7 +26,7 @@ export default class App extends Component {
           <Switch>
             <Route exact path='/' render={() => 
               isLoggedIn()
-                ? <Redirect to='/user/stash' />
+                ? <Redirect to='/stash' />
                 : <Redirect to='/splash' />
             } />
             <Route path='/splash' component={Splash} />
@@ -35,8 +35,8 @@ export default class App extends Component {
             <Route path='/login' component={LogIn} />
             <Route path='/colors' component={Colors} />
             <Route exact path="/detail/:id" component={Detail} />
-            <Route path='/user/stash' component={Stash} />
-            <Route path='/user/palettes' component={SavedPalettes} />
+            <Route path='/stash' component={Stash} />
+            <Route path='/palettes' component={SavedPalettes} />
             <Route path='/palettes' component={Palettes} />
           </Switch>
         </Router>

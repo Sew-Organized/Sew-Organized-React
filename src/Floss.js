@@ -71,11 +71,17 @@ export default withRouter(class Floss extends Component {
         return (
             <div className="flossContainer">
                 <li className='flossBox'>
-                    <Link to={`detail/${floss.id}`} key={`link_${dmc_id}`}>
-                    <h3>{ description }</h3>
-                    </Link>
+                    {
+                        this.props.location.pathname === '/stash'
+                            ? <Link to={`detail/${dmc_id}`} key={`link_${dmc_id}`}>
+                            <h3>{ description }</h3>
+                            </Link>
+                            : <Link to={`detail/${floss.id}`} key={`link_${dmc_id}`}>
+                            <h3>{ description }</h3>
+                            </Link>
+                    }
                     <h4>{ 
-                            this.props.location.pathname === '/user/stash'
+                            this.props.location.pathname === '/stash'
                                 ? dmc_id
                                 : floss.id
                         }
@@ -84,7 +90,7 @@ export default withRouter(class Floss extends Component {
                         <div className='hexContainer' style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 
                     </div>
                     
-                { this.props.location.pathname === '/user/stash'
+                { this.props.location.pathname === '/stash'
                     ?   <label id='ownedText' for='owned'>Skeins Owned: 
                             <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
         
@@ -104,7 +110,7 @@ export default withRouter(class Floss extends Component {
                         </label>
                     : ''
                     }
-                { this.props.location.pathname === '/user/stash'
+                { this.props.location.pathname === '/stash'
                     ?   <div>
                             <button className="primary" onClick={ this.handleUpdateStash }> Update Stash</button>
                             <i className="fas fa-trash-alt" value={this.props.floss.id} onClick={ this.handleDeleteFromStash }></i>

@@ -19,7 +19,7 @@ export default class LogIn extends Component {
         })
     
         localStorage.setItem('user', JSON.stringify(logIn.body));
-        this.props.history.push('/user/stash')
+        this.props.history.push('/stash')
     }
     render() {
         return (

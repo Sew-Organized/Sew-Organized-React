@@ -28,16 +28,16 @@ export default withRouter( class Nav extends Component {
                             </NavItem>
 
                             <NavItem eventKey="Stash">
-                                <NavIcon><Link to="/user/stash"><i class="fas fa-bookmark"></i></Link></NavIcon>
+                                <NavIcon><Link to="/stash"><i class="fas fa-bookmark"></i></Link></NavIcon>
                                 <NavText>
-                                    <Link to="/user/stash">My Stash</Link>
+                                    <Link to="/stash">My Stash</Link>
                                 </NavText>
                             </NavItem>
 
                             <NavItem eventKey="MyPalettes">
-                                <NavIcon><Link to="/user/palettes"><i class="fas fa-swatchbook"></i></Link></NavIcon>
+                                <NavIcon><Link to="/palettes"><i class="fas fa-swatchbook"></i></Link></NavIcon>
                                 <NavText>
-                                    <Link to="/user/palettes">My Palettes</Link>
+                                    <Link to="/palettes">My Palettes</Link>
                                 </NavText>
                             </NavItem>
 
