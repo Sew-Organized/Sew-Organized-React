@@ -70,7 +70,7 @@ export default withRouter(class Floss extends Component {
                     <h3>{ description }</h3>
                     </Link>
                     <h3>{ 
-                            this.props.location.pathname === '/user/stash'
+                            this.props.location.pathname === '/stash'
                                 ? dmc_id
                                 : floss.id
                         }
@@ -79,7 +79,7 @@ export default withRouter(class Floss extends Component {
                         <div className='hexContainer' style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 
                     </div>
 {/* Write a function to post api/username/stash/id to update quantity*/}                    
-                { this.props.location.pathname === '/user/stash'
+                { this.props.location.pathname === '/stash'
                     ?   <label for='owned'>Skeins Owned: 
                             <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
         {/* Write a function to remove from stash if value=0 */}
@@ -99,7 +99,7 @@ export default withRouter(class Floss extends Component {
                         </label>
                     : ''
                     }
-                { this.props.location.pathname === '/user/stash'
+                { this.props.location.pathname === '/stash'
                     ?   <div>
                             <button onClick={ this.handleUpdateStash }> Update Stash</button>
                             <button value={this.props.floss.id} onClick={ this.handleDeleteFromStash }> Remove</button>
