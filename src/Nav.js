@@ -35,9 +35,9 @@ export default withRouter( class Nav extends Component {
                             </NavItem>
 
                             <NavItem eventKey="MyPalettes">
-                                <NavIcon><Link to="/palettes"><i class="fas fa-swatchbook"></i></Link></NavIcon>
+                                <NavIcon><Link to="/mypalettes"><i class="fas fa-swatchbook"></i></Link></NavIcon>
                                 <NavText>
-                                    <Link to="/palettes">My Palettes</Link>
+                                    <Link to="/mypalettes">My Palettes</Link>
                                 </NavText>
                             </NavItem>
 

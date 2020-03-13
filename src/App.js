@@ -36,7 +36,7 @@ export default class App extends Component {
             <Route path='/colors' component={Colors} />
             <Route exact path="/detail/:id" component={Detail} />
             <Route path='/stash' component={Stash} />
-            <Route path='/palettes' component={SavedPalettes} />
+            <Route path='/mypalettes' component={SavedPalettes} />
             <Route path='/palettes' component={Palettes} />
           </Switch>
         </Router>
