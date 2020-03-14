@@ -27,23 +27,38 @@ export default class Colors extends Component {
         this.setState({ stashed: [...this.state.stashed, flossObject] })
     }
 
-    handleChange = (event) => {
+    handleIdChange = (event) => {
         this.setState({
-            searchQuery: event.target.value
+            searchQueryId: event.target.value
         })
     }
 
-    handleSearch = async (event) => {
+    handleNameChange = (event) => {
+        this.setState({
+            searchQueryName: event.target.value
+        })
+    }
+
+    handleIdSearch = async (event) => {
         event.preventDefault();
-        const data = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors/search?id=${this.state.searchQuery}`);
+        const data = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors/search?id=${this.state.searchQueryId}`);
         console.log(data.body);
-        
 
         this.setState({
             flosses: data.body
         })
-
     }
+
+    handleNameSearch = async (event) => {
+        event.preventDefault();
+        const data = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors/namesearch?name=${this.state.searchQueryName}`);
+        console.log(data.body);
+
+        this.setState({
+            flosses: data.body
+        })
+    }
+
         render() {
             const header = "All Colors";
 
@@ -51,7 +66,7 @@ export default class Colors extends Component {
             <div className="componentContainer">
                 <Header header={header} />
                 <Nav />
-                <SearchBar handleChange={this.handleChange} handleSearch={this.handleSearch} />
+                <SearchBar handleIdChange={this.handleIdChange} handleIdSearch={this.handleIdSearch} handleNameChange={this.handleNameChange} handleNameSearch={this.handleNameSearch} />
                 <List handleClick={this.setStash} flosses={this.state.flosses} stashedFlosses={this.state.stashed} />
             </div>
         )
