@@ -19,7 +19,7 @@ export default withRouter( class Nav extends Component {
                     <SideNav className='sideNav'>
                         <SideNav.Toggle />
                         <SideNav.Nav defaultSelected="Colors">
-
+                            // would have liked to see these as a hard coded array of objects, mapped over to render components
                             <NavItem eventKey="Colors">
                                 <NavIcon><Link to="/colors"><i class="fas fa-th"></i></Link></NavIcon>
                                 <NavText>

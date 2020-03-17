@@ -23,6 +23,7 @@ export default class Detail extends Component {
             this.setState({ floss: data.body[0] })
             console.log('state', this.state.floss);
         }
+        // i would have liked to see these api calls all live in a utility file to be resued throught the app
         const dmcData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors`)
 
         // double check data format that sets state
@@ -58,6 +59,7 @@ export default class Detail extends Component {
     }
 
     // does color math, and is called in matchDMC
+    // hmmm, some attribution here of where the code came from would probably be helpful for any future devs who have to maintain this code
     distanceFromColor(idx, r, g, b) {
         const dmcColorList = this.transformPaletteData();
         const tr = dmcColorList[idx][2];

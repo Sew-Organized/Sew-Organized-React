@@ -53,6 +53,7 @@ export default class Palettes extends Component {
     }
 
     // does color math, and is called in matchDMC
+    // hmmmm, looks like the same function as in Detail.js, should have been moved into a separate file where both components could use it without copying and pasting
     distanceFromColor(idx, r, g, b) {
         const dmcColorList = this.transformPaletteData();
         const tr = dmcColorList[idx][2];

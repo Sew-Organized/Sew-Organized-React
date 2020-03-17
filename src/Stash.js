@@ -20,6 +20,7 @@ state = {
     }
 
     
+    // nice optimistic rendering!
     deleteFlossFromState = (e) => {
         e.preventDefault();
 

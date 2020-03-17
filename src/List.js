@@ -11,6 +11,7 @@ export default class List extends Component {
                         floss={floss} 
                         setStash={this.props.handleClick} 
                         deleteFlossFromState={this.props.deleteFlossFromState} 
+                        // nice prop spreadin'!
                         {...this.props}/>
                 ) }
                 </ul>
