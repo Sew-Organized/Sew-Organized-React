@@ -24,6 +24,7 @@ export default class App extends Component {
         <Router>
         
           <Switch>
+          // if splash had been renamed login, this could have used the PrivateRoute component from my favorites-back-end repo. As it is, it looks like users can access other routes without being logged in
             <Route exact path='/' render={() => 
               isLoggedIn()
                 ? <Redirect to='/stash' />

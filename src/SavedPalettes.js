@@ -29,11 +29,15 @@ export default class SavedPalettes extends Component {
                         <div className="paletteContainer">
                             <h2>{savedPalette.palette_name}</h2>
                             <div className="palette">
-                                <Floss floss={JSON.parse(savedPalette.dmc_one)} />
-                                <Floss floss={JSON.parse(savedPalette.dmc_two)} />
-                                <Floss floss={JSON.parse(savedPalette.dmc_three)} />
-                                <Floss floss={JSON.parse(savedPalette.dmc_four)} />
-                                <Floss floss={JSON.parse(savedPalette.dmc_five)} />
+                            {
+                                [
+                                    'dmc_one',
+                                    'dmc_two',
+                                    'dmc_three',
+                                    'dmc_four',
+                                    'dmc_five'
+                                ].map(key => <Floss floss={JSON.parse(savedPalette[key])} />)
+                            }
                             </div>
                         </div>
                     )
