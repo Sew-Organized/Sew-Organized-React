@@ -1,54 +1,33 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import request from 'superagent'
-
+import { createStash, updateFlossInStash, removeFromStash } from './utils/API-services'
 
 export default withRouter(class Floss extends Component {
     state = {
         quantityInput: this.props.floss.quantity || 0,
     }
 
-    // callback 
     handleAddStash = async (e) => {
         e.preventDefault();
-
-        const user = JSON.parse(localStorage.getItem('user'));
-        
         const myStash = {
             dmcId: this.props.floss.id,
             quantity: this.state.quantityInput
         };
-
         this.props.setStash(myStash);
-
         this.refs.btn.setAttribute('disabled', 'disabled');
-        
-        const stash = await request.post(`https://mighty-mesa-93390.herokuapp.com/api/username/stash`, {
-            quantity: this.state.quantityInput,
-            dmcId: this.props.floss.id }).set('Authorization', user.token);   
+        await createStash(this.state.quantityInput, this.props.floss.id);  
     }
-
 
     handleUpdateStash = async (e) => {
         e.preventDefault();
-
-        const user = JSON.parse(localStorage.getItem('user'));
-
-        const updateStash = await request.put(`https://mighty-mesa-93390.herokuapp.com/api/username/stash/${this.props.floss.id}`, {
-            quantity: this.state.quantityInput}).set('Authorization', user.token);
+        await updateFlossInStash(this.state.quantityInput, this.props.floss.id);
     };
-
 
     handleDeleteFromStash = async (e) => {
         e.preventDefault();
-        const user = JSON.parse(localStorage.getItem('user'));
-
         this.props.deleteFlossFromState(e);
-
-        const deletedFromStash = await request.delete(`https://mighty-mesa-93390.herokuapp.com/api/username/stash/${this.props.floss.id}`)
-            .set('Authorization', user.token);
+        await removeFromStash(this.props.floss.id); 
         };
-
 
         findById = (array, id) => {
             for (let index = 0; index < array.length; index++) {
@@ -58,7 +37,6 @@ export default withRouter(class Floss extends Component {
                 } 
             }
         };
-
 
     render() {
         const { floss } = this.props;
@@ -135,6 +113,4 @@ export default withRouter(class Floss extends Component {
             </div>
         )
     }
-
-})  
-
+})

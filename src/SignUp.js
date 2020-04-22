@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import request from 'superagent';
 import './SignUp.css'; 
+import { signUpUser, setUserInLocalStorage } from './utils/API-services';
 
 export default class SignUp extends Component {
     state = {
@@ -9,18 +9,14 @@ export default class SignUp extends Component {
         displayName: '',
     }
     
-    handleSignUp = (e) => {
+    handleSignUp = e => {
         e.preventDefault();
-        request.post(`https://mighty-mesa-93390.herokuapp.com/api/auth/signup`, {
-            email: this.state.email,
-            password: this.state.password,
-            displayName: this.state.displayName
-        })
-        .then(response => {
-                localStorage.setItem('user', JSON.stringify(response.body));
+        signUpUser(this.state.email, this.state.password, this.state.displayName)
+            .then(response => {
+                setUserInLocalStorage(response);
                 this.props.history.push('/colors')
-        })
-        .catch(err => this.setState({error: err.response.body.error}) 
+            })
+            .catch(err => this.setState({error: err.response.body.error}) 
         );
     }
 
