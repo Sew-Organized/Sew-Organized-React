@@ -48,13 +48,6 @@ export default withRouter( class Nav extends Component {
                                 </NavText>
                             </NavItem>
 
-                            <NavItem eventKey="About">
-                                <NavIcon><Link to="/About"><i class="fas fa-users"></i></Link></NavIcon>
-                                <NavText>
-                                    <Link to="/About">About the Devs</Link>
-                                </NavText>
-                            </NavItem>
-
                             <NavItem eventKey="LogOut">
                                 <NavIcon><Link to="/splash"><i class="fas fa-sign-out-alt"></i></Link></NavIcon>
                                 <NavText>

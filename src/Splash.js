@@ -25,6 +25,7 @@ export default class Splash extends Component {
 
                     <button className="splash"
                     id='signInButton' onClick={this.handleSignIn}>Log in</button>
+                    <p><a href="/about">About the development team</a></p>
                 </main>
             </div>
         )

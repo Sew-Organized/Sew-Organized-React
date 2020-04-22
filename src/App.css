@@ -106,16 +106,6 @@ button {
     position: relative;
 }
 
-.aboutText {
-    word-wrap: wrap;
-    height: 200px;
-    width: 200px;
-    font-size: 20px;
-    margin: 0.50em;
-    padding: 0.50em;
-    background: rgba(255, 255, 255, 0.8);
-}
-
 .aboutLI img {
     border-radius: 50%;
 }
