@@ -1,10 +1,9 @@
 #footerComponent {
   background: #000;
   color: #fff;
-  position: absolute;
-  bottom: 0;
+  margin-top: 110px;
   width: 100%;
-  padding: 20px;
+  padding: 20px 0;
   text-align: center;
 }
 

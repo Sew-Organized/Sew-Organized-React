@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { getFloss } from './services/API.js';
-import Floss from './Floss.js';
-import request from 'superagent';
-import Nav from './Nav.js';
-import Header from './Header.js';
-import RandomPalette from './RandomPalette.js';
+import { getFloss, getColors, getColorSchemeFromId } from './utils/API-services';
+import Floss from './Floss';
+import Nav from './Nav';
+import Header from './Header';
+import RandomPalette from './RandomPalette';
 
 export default class Detail extends Component {
     state = {
@@ -15,15 +14,9 @@ export default class Detail extends Component {
     };
     
     async componentDidMount() {
-        const user = JSON.parse(localStorage.getItem('user'));
-
-        const data = await (await getFloss(this.props.match.params.id, user));
-        if (data.body) {
-            console.log('data.body:', data.body);
-            this.setState({ floss: data.body[0] })
-            console.log('state', this.state.floss);
-        }
-        const dmcData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors`)
+        const data = await getFloss(this.props.match.params.id);
+        if (data.body) this.setState({ floss: data.body[0] });
+        const dmcData = await getColors();
 
         // double check data format that sets state
         this.setState({ dmcData: dmcData.body })
@@ -31,7 +24,7 @@ export default class Detail extends Component {
 
     // generates 5 monochrome dmc colors that are close matches to the current color
     generateApiColors = async () => {
-        const randomPalette = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/scheme/${this.props.match.params.id}`);
+        const randomPalette = await getColorSchemeFromId(this.props.match.params.id);
         this.setState({ 
             randomPalette: randomPalette.body,
             buttonDisabled: false

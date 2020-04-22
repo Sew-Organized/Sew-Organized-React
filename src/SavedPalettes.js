@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import request from 'superagent';
 import Floss from './Floss.js';
 import Nav from './Nav.js';
 import Header from './Header.js';
-
+import { getPalettes } from './utils/API-services.js';
 
 export default class SavedPalettes extends Component {
     state = {
@@ -13,10 +12,10 @@ export default class SavedPalettes extends Component {
 
     // fetch user's saved palettes and store in local state
     componentDidMount = async () => {
-        const user = JSON.parse(localStorage.getItem('user'));
-        const savedPalettesData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/username/palettes`).set('Authorization', user.token);
+        const savedPalettesData = await getPalettes();
         this.setState({ savedPalettes: savedPalettesData.body });
     }
+
     render() {
         const header = "My Palettes";
         return(

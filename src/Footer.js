@@ -12,7 +12,6 @@ export default withRouter(class Footer extends Component {
             ? <a href="/about">About the Developers</a>
             : <a href="/splash">Return Home</a>
         }
-        
       </div>
     )
   }
