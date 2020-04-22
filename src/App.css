@@ -27,7 +27,7 @@ body {
 
 a {
     text-decoration: none;
- }
+}
 
 button, a, i {
     cursor: pointer;
@@ -116,6 +116,10 @@ button {
 /* LogIn Section */
 .logInDiv {
     text-align: center;
+}
+
+.error {
+    background-color: rgb(160, 18, 18);
 }
 
 /* About Devs Section */
