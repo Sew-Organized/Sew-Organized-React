@@ -11,16 +11,16 @@ export default class RandomPalette extends Component {
     savePalette = async (e) => {
         e.preventDefault();
         const user = JSON.parse(localStorage.getItem('user'));
+        const [dmcOne, dmcTwo, dmcThree, dmcFour, dmcFive] = this.props.palette;
         
         const stashPalette = await request.post(`https://mighty-mesa-93390.herokuapp.com/api/username/palettes`, {
             paletteName: this.state.paletteName,
-            dmcOne: this.props.palette[0],
-            dmcTwo: this.props.palette[1],
-            dmcThree: this.props.palette[2],
-            dmcFour: this.props.palette[3],
-            dmcFive: this.props.palette[4]
+            dmcOne,
+            dmcTwo,
+            dmcThree,
+            dmcFour,
+            dmcFive
         }).set('Authorization', user.token);
-
         this.setState({ paletteName: '' });
         
     }
