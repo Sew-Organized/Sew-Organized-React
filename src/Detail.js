@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { getFloss, getColors, getColorSchemeFromId } from './utils/API-services.js';
-import Floss from './Floss.js';
-import Nav from './Nav.js';
-import Header from './Header.js';
-import RandomPalette from './RandomPalette.js';
+import { getFloss, getColors, getColorSchemeFromId } from './utils/API-services';
+import Floss from './Floss';
+import Nav from './Nav';
+import Header from './Header';
+import RandomPalette from './RandomPalette';
 
 export default class Detail extends Component {
     state = {
@@ -14,12 +14,8 @@ export default class Detail extends Component {
     };
     
     async componentDidMount() {
-        const data = await (await getFloss(this.props.match.params.id));
-        if (data.body) {
-            console.log('data.body:', data.body);
-            this.setState({ floss: data.body[0] })
-            console.log('state', this.state.floss);
-        }
+        const data = await getFloss(this.props.match.params.id);
+        if (data.body) this.setState({ floss: data.body[0] });
         const dmcData = await getColors();
 
         // double check data format that sets state

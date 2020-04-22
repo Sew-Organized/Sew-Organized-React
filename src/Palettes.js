@@ -15,7 +15,6 @@ export default class Palettes extends Component {
     async componentDidMount() {
         // put in api request link for rendering data
         const palettesData = await getPalettes();
-
         const dmcData = await getColors();
 
         // double check data format that sets state
