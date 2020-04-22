@@ -25,18 +25,18 @@ export default withRouter(class Floss extends Component {
 
     handleDeleteFromStash = async (e) => {
         e.preventDefault();
-        this.props.deleteFlossFromState(e);
+        this.props.deleteFlossFromState(this.props.floss.id);
         await removeFromStash(this.props.floss.id); 
         };
 
-        findById = (array, id) => {
-            for (let index = 0; index < array.length; index++) {
-                const item = array[index];
-                if (item.dmc_id === id) {
-                    return true;
-                } 
-            }
-        };
+    findById = (array, id) => {
+        for (let index = 0; index < array.length; index++) {
+            const item = array[index];
+            if (item.dmc_id === id) {
+                return true;
+            } 
+        }
+    };
 
     render() {
         const { floss } = this.props;
