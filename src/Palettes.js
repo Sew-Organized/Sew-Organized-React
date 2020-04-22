@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import RandomPalette from './RandomPalette.js';
-import request from 'superagent';
 import Nav from './Nav.js';
 import Header from './Header.js';
+import { getPalettes, getColors, getColorScheme } from './utils/API-services.js';
 
 export default class Palettes extends Component {
     state = {
@@ -13,12 +13,10 @@ export default class Palettes extends Component {
 
 // Fetches data for user's saved palettes and all dmc data, sets in state
     async componentDidMount() {
-        const user = JSON.parse(localStorage.getItem('user'));
         // put in api request link for rendering data
-        const palettesData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/username/palettes
-        `).set('Authorization', user.token);
+        const palettesData = await getPalettes();
 
-        const dmcData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors`)
+        const dmcData = await getColors();
 
         // double check data format that sets state
         this.setState({ palettes: palettesData.body, dmcData: dmcData.body })
@@ -26,7 +24,7 @@ export default class Palettes extends Component {
 
     // generates five random colors from color api, converts to nearest DMC colors, and changes format of data
     generateApiColors = async () => {
-        const randomPalette = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/scheme`);
+        const randomPalette = await getColorScheme();
         this.setState({ 
             randomPalette: randomPalette.body,
             buttonDisabled: false

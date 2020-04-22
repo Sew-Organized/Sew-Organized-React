@@ -1,28 +1,23 @@
 import React, { Component } from 'react'
-import request from 'superagent';
 import './LogIn.css';
-
+import { logInUser, setUserInLocalStorage } from './utils/API-services';
 
 export default class LogIn extends Component {
     state = {
         email: '',
         password: '',
-        username: '',
+        displayName: '',
     }
     
-    handleLogIn = (e) => {
+    handleLogIn = e => {
         e.preventDefault();
-        request.post(`https://mighty-mesa-93390.herokuapp.com/api/auth/login`, {
-            email: this.state.email,
-            password: this.state.password,
-            username: this.state.username
-        })
-        .then(response => {
-            localStorage.setItem('user', JSON.stringify(response.body));
-            this.props.history.push('/stash')
-        })  
-        .catch(err => this.setState({error: err.response.body.error})
-        ); 
+        logInUser(this.state.email, this.state.password, this.state.displayName)
+            .then(response => {
+                setUserInLocalStorage(response);
+                this.props.history.push('/stash');
+            })  
+            .catch(err => this.setState({error: err.response.body.error})
+            ); 
     }
 
     render() {
@@ -34,8 +29,8 @@ export default class LogIn extends Component {
                 <input 
                     type='username'
                     placeholder='username'
-                    value={ this.state.username } 
-                    onChange={(e) => this.setState({ username: e.target.value})} />
+                    value={ this.state.displayName } 
+                    onChange={(e) => this.setState({ displayName: e.target.value})} />
                 <p></p>
                 <input 
                     type='email'

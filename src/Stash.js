@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import List from './List.js';
-import request from 'superagent'
 import Nav from './Nav.js';
 import Header from './Header.js';
+import { getUserStash } from './utils/API-services.js';
 
 export default class Stash extends Component {
 state = {
@@ -10,19 +10,14 @@ state = {
 }
 
     async componentDidMount() {
-        const user = JSON.parse(localStorage.getItem('user'));
-
-        const data = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/username/stash`).set('Authorization', user.token);
-
+        const data = await getUserStash();
         this.setState({
             stashed: data.body
         })
     }
-
     
     deleteFlossFromState = (e) => {
         e.preventDefault();
-
         const flossToDelete = e.target.value;
         const stash = [...this.state.stashed];
         stash.splice(stash.findIndex(floss => {

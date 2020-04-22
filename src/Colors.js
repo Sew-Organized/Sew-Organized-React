@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import List from './List.js';
-import request from 'superagent';
 import Nav from './Nav.js';
 import Header from './Header.js'
 import SearchBar from './SearchBar';
+import { getColors, getUserStash, getColorById, getColorsByName } from './utils/API-services';
 
 export default class Colors extends Component {
     // state for the array of flosses to be posted to page
@@ -13,10 +13,8 @@ export default class Colors extends Component {
     }
 
     async componentDidMount() {
-        const user = JSON.parse(localStorage.getItem('user'));
-        const data = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors`).set('Authorization', user.token);
-        
-        const stashedData = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/username/stash`).set('Authorization', user.token);
+        const data = await getColors();        
+        const stashedData = await getUserStash();
         
         this.setState({ 
             flosses: data.body, 
@@ -41,8 +39,7 @@ export default class Colors extends Component {
 
     handleIdSearch = async (event) => {
         event.preventDefault();
-        const data = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors/search?id=${this.state.searchQueryId}`);
-        console.log(data.body);
+        const data = await getColorById(this.state.searchQueryId);
 
         this.setState({
             flosses: data.body
@@ -51,8 +48,7 @@ export default class Colors extends Component {
 
     handleNameSearch = async (event) => {
         event.preventDefault();
-        const data = await request.get(`https://mighty-mesa-93390.herokuapp.com/api/colors/namesearch?name=${this.state.searchQueryName}`);
-        console.log(data.body);
+        const data = await getColorsByName(this.state.searchQueryName);
 
         this.setState({
             flosses: data.body
