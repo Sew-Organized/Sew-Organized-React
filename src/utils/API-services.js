@@ -23,7 +23,7 @@ export const signUpUser = (email, password, displayName) => request.post(`${URL}
 
 
 // Floss Routes
-export const getFloss = (flossId) => {
+export const getFloss = flossId => {
   const user = getUserFromLocalStorage();
   return request
     .get(`${URL}/api/detail/${flossId}`)
@@ -54,10 +54,10 @@ export const addFlossToStash = (quantity, dmcId) => {
   const user = getUserFromLocalStorage();
   return request
     .post(`${URL}/api/username/stash`, {
-      quantity,
-      dmcId 
+      dmcId, 
+      quantity
     })
-  .set('Authorization', user.token);   
+    .set('Authorization', user.token);   
 };
 
 export const updateFlossInStash = (quantity, dmcId) => {
@@ -73,17 +73,6 @@ export const removeFromStash = dmcId => {
     .delete(`${URL}/api/username/stash/${dmcId}`)
     .set('Authorization', user.token);   
 };
-
-export const createStash = (quantity, dmcId) => {
-  const user = getUserFromLocalStorage();
-  request
-    .post(`${URL}/api/username/stash`, {
-      quantity,
-      dmcId 
-    })
-    .set('Authorization', user.token); 
-};
-
 
 // Scheme Routes
 export const getColorScheme = colorId => request.get(`${URL}/api/scheme`);

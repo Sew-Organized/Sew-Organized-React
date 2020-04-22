@@ -33,11 +33,7 @@ export default class Detail extends Component {
     };
 
     // takes full DMC color object array and transforms into array of arrays
-    transformPaletteData = () => {
-        // turns dmc colors data into arrays for compatibility reasons
-        const dmcColorList = this.state.dmcData.map(color => Object.values(color));
-        return dmcColorList;
-    };
+    transformPaletteData = () => this.state.dmcData.map(color => Object.values(color));
 
     // take the array of objects returned by generateApiColors
     dmcMatches = () => {
