@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Nav from './Nav.js';
 import Header from './Header.js';
+import './App.css';
 
 export default class About extends Component {
     render() {

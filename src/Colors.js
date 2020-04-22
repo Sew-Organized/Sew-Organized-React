@@ -4,6 +4,7 @@ import request from 'superagent';
 import Nav from './Nav.js';
 import Header from './Header.js'
 import SearchBar from './SearchBar';
+import './Colors.css';
 
 export default class Colors extends Component {
     // state for the array of flosses to be posted to page

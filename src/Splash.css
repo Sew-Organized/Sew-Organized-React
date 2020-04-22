@@ -1,71 +1,65 @@
-body {
-    font-family: 'Nothing You Could Do';
-    /* background-image: url('./flossOption_5.jpg'); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: white;
-    left: 40px;
-    background: linear-gradient( rgba(108, 85, 146, .4), rgba(108, 85, 146, .4)), url('./flossOption_5.jpg');
-    color: #A18982;
-}
-
-
-
 main {
     text-align: center;
-    margin-top: 200px;
-    margin-right: 300px;
-    margin-left: 200px;
+    margin-top: 400px;
     padding: 20px;
     border: none; 
-    background-color: rgba(255, 255, 255, 0.671);
 }
 
 h1.splash {
-    color: #333;
-    font-size: 90px;
+    color: #000;
+    font-size: 80px;
     font-weight: bolder;
     padding-top: 5px;
     margin: 20px;
 }
 
 p.splash {
-    color: #333;
+    color: #000;
     font-family: 'Open Sans';
-    font-size: 30px;
-    margin-right: 50px;
-    margin-left: 50px;
+    font-size: 24px;
+    margin-top: 0;
 }
 
  button.splash {
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    background-color: #C79682;
-    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+    font-size: 20px;
+    padding: 10px 20px;
     margin: 15px;
     cursor: pointer;
 }
 
 #signUpButton {
-    color:  rgb(174, 207, 138);
-    background-color: #5D3356;
+    background-color: #2958CA;
 }
 
 #signInButton {
-    color: #5D3356;
-    background-color: rgb(174, 207, 138);
+    background-color: #F95C5E;
 }
 
-#signUpButton:hover {
-    background-color:rgb(181, 212, 147);
-    color: rgba(93, 51, 86, .7);
+#splashHeader {
+    font-size: 90px;
+    font-weight: bolder;
+    padding-top: 5px;
+    margin: 20px;
 }
 
-#signInButton:hover {
-    background-color:rgba(93, 51, 86, .7);
-    color:rgb(181, 212, 147);
+#splashText {
+    font-size: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+#splashButton {
+    font-size: 30px;
+    background-color: #DEDCD0;
+    padding: 10px;
+    margin: 15px;
+}
+
+.splashLinks a {
+    font-size: 40px;
+    color: white;
+    background-color: rgba(82, 85, 63, 0.671);
 }
 
