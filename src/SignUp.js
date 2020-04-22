@@ -7,7 +7,6 @@ export default class SignUp extends Component {
         email: '',
         password: '',
         displayName: '',
-        error: ''
     }
     
     handleSignUp = (e) => {
@@ -17,7 +16,6 @@ export default class SignUp extends Component {
             password: this.state.password,
             displayName: this.state.displayName
         })
-        // .then(response => response.json())
         .then(response => {
                 localStorage.setItem('user', JSON.stringify(response.body));
                 this.props.history.push('/colors')
