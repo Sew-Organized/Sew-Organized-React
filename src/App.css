@@ -329,3 +329,7 @@ div.detailFlossContainer {
     align-items: center;
     margin-top: 45px;
 }
+
+.componentContainer {
+    background: #FFF;
+}

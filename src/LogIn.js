@@ -12,11 +12,15 @@ export default class LogIn extends Component {
     
     handleLogIn = async (e) => {
         e.preventDefault();
-        const logIn = await request.post(`https://mighty-mesa-93390.herokuapp.com/api/auth/login`, {
+        const logIn = await request.post(`http://localhost:3001/api/auth/login`, {
             email: this.state.email,
             password: this.state.password,
             username: this.state.username
         })
+
+        if(!logIn.body) {
+            this.props.history.push('/');
+        }
     
         localStorage.setItem('user', JSON.stringify(logIn.body));
         this.props.history.push('/stash')

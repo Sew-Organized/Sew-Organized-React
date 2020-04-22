@@ -5,7 +5,12 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: white;
+    left: 40px;
+    background: linear-gradient( rgba(108, 85, 146, .4), rgba(108, 85, 146, .4)), url('./flossOption_5.jpg');
+    color: #A18982;
 }
+
+
 
 main {
     text-align: center;

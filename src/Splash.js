@@ -15,7 +15,7 @@ export default class Splash extends Component {
     render() {
 
         return (
-            <div>
+            <div className="splashComponent">
                 <main>
                     <h1 className="splash">Sew Organized</h1>
           
