@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import Nav from './Nav.js';
+import React, { Component } from 'react';
 import Header from './Header.js';
-import './App.css';
+import Footer from './Footer.js';
+import './About.css';
 
 export default class About extends Component {
     render() {
@@ -93,7 +93,6 @@ export default class About extends Component {
                         </div>
                     </ul>
                 </div>
-                <p><a href="/splash">Return Home</a></p>
             </div>
         )
     }

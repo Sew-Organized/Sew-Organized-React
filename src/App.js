@@ -14,6 +14,7 @@ import Colors from './Colors.js';
 import Palettes from './Palettes.js';
 import SavedPalettes from './SavedPalettes.js';
 import Detail from './Detail.js';
+import Footer from './Footer.js';
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user'));
 
@@ -39,6 +40,7 @@ export default class App extends Component {
             <Route path='/mypalettes' component={SavedPalettes} />
             <Route path='/palettes' component={Palettes} />
           </Switch>
+          <Footer/>
         </Router>
       </div>
     )

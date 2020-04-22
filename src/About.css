@@ -1,0 +1,115 @@
+/* About Devs Section */
+.aboutUL {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.aboutLI {
+  margin: 0.50em;
+  padding-top: 1.25em;
+  width: 250px;
+  height: 440px;
+  font-size: 20px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  position: relative;
+}
+
+.aboutLI img {
+  border-radius: 50%;
+}
+
+#aboutChelsea {
+  color: #FF6224;
+}
+
+#aboutChelsea p {
+  color: #000;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+#aboutChelsea .social-media-links {
+  background: #FF6224;
+}
+
+#aboutDannie {
+  color: #A7AE38;
+}
+
+#aboutDannie p {
+  color: #000;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+#aboutDannie .social-media-links {
+  background: #A7AE38;
+}
+
+#aboutJenna {
+  color: #0EC9CC;
+}
+
+#aboutJenna p {
+  color: #000;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+#aboutJenna .social-media-links {
+  background: #0EC9CC;
+}
+
+#aboutJanelle {
+  color: #A18982;
+}
+
+#aboutJanelle p {
+  color: #000;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+#aboutJanelle .social-media-links {
+  background: #A18982;
+}
+
+#aboutDakota {
+  color: rgb(138, 19, 91);
+}
+
+#aboutDakota p {
+  color: #000;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+#aboutDakota .social-media-links {
+  background: rgb(138, 19, 91);
+}
+
+
+
+.social-media-links {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.linked {
+  margin-right: 4px;
+}
