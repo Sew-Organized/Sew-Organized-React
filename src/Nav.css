@@ -7,7 +7,7 @@
     z-index: 1006;
     min-width: 64px;
     /* background: rgb(169, 213, 122); */
-    background: url('./sidenav_bg.jpg');
+    background: url('/sidenav_bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-transition: min-width 0.2s;

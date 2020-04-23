@@ -9,7 +9,7 @@
   }
   
   .MuiAppBar-colorPrimary {
-    background: url('./sidenav_bg.jpg');
+    background: url('/sidenav_bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -23,7 +23,7 @@
   }
 
   .MuiPaper-root {
-    background: url('./sidenav_bg.jpg');
+    background: url('/sidenav_bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
   }
