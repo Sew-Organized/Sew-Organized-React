@@ -3,7 +3,7 @@ import List from './List.js';
 import Nav from './Nav.js';
 import Header from './Header.js'
 import SearchBar from './SearchBar';
-import { getColors, getUserStash, getColorById, getColorsByName } from './utils/API-services';
+import { getColors, getUserStash, getColorById, getColorsByName, addFlossToStash } from './utils/API-services';
 
 export default class Colors extends Component {
     // state for the array of flosses to be posted to page
@@ -21,8 +21,9 @@ export default class Colors extends Component {
             stashed: stashedData.body })
     }
 
-    setStash = (flossObject) => {
+    setStash = async(flossObject) => {
         this.setState({ stashed: [...this.state.stashed, flossObject] })
+        await addFlossToStash(flossObject.quantity, flossObject.dmcId);  
     }
 
     handleIdChange = (event) => {
