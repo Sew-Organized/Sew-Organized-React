@@ -25,7 +25,7 @@ export default withRouter(class Floss extends Component {
 
     handleDeleteFromStash = async (e) => {
         e.preventDefault();
-        this.props.deleteFlossFromState(e);
+        this.props.deleteFlossFromState(this.props.floss.id);
         await removeFromStash(this.props.floss.id); 
         };
 
