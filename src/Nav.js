@@ -21,35 +21,35 @@ export default withRouter( class Nav extends Component {
                         <SideNav.Nav defaultSelected="Colors">
 
                             <NavItem eventKey="Colors">
-                                <NavIcon><Link to="/colors"><i class="fas fa-th"></i></Link></NavIcon>
+                                <NavIcon><Link to="/colors"><i className="fas fa-th"></i></Link></NavIcon>
                                 <NavText>
                                     <Link to="/colors">All Colors</Link>
                                 </NavText>
                             </NavItem>
 
                             <NavItem eventKey="Stash">
-                                <NavIcon><Link to="/stash"><i class="fas fa-bookmark"></i></Link></NavIcon>
+                                <NavIcon><Link to="/stash"><i className="fas fa-bookmark"></i></Link></NavIcon>
                                 <NavText>
                                     <Link to="/stash">My Stash</Link>
                                 </NavText>
                             </NavItem>
 
                             <NavItem eventKey="MyPalettes">
-                                <NavIcon><Link to="/mypalettes"><i class="fas fa-swatchbook"></i></Link></NavIcon>
+                                <NavIcon><Link to="/mypalettes"><i className="fas fa-swatchbook"></i></Link></NavIcon>
                                 <NavText>
                                     <Link to="/mypalettes">My Palettes</Link>
                                 </NavText>
                             </NavItem>
 
                             <NavItem eventKey="Palettes">
-                                <NavIcon><Link to="/palettes"><i class="fas fa-palette"></i></Link></NavIcon>
+                                <NavIcon><Link to="/palettes"><i className="fas fa-palette"></i></Link></NavIcon>
                                 <NavText>
                                     <Link to="/palettes">Palette Generator</Link>
                                 </NavText>
                             </NavItem>
 
                             <NavItem eventKey="LogOut">
-                                <NavIcon><Link to="/splash"><i class="fas fa-sign-out-alt"></i></Link></NavIcon>
+                                <NavIcon><Link to="/splash"><i className="fas fa-sign-out-alt"></i></Link></NavIcon>
                                 <NavText>
                                     <div onClick={this.logout}>Log Out</div>
                                 </NavText>

@@ -1,8 +1,13 @@
 /* About Devs Section */
+
+.aboutDiv {
+  width: 100%;
+  margin: 0 auto;
+}
 .aboutUL {
   list-style: none;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -96,8 +101,6 @@
 #aboutDakota .social-media-links {
   background: rgb(138, 19, 91);
 }
-
-
 
 .social-media-links {
   box-sizing: border-box;

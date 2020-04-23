@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Footer from './Footer.js';
 import './App.css';
 import './Splash.css';
 
@@ -27,6 +28,7 @@ export default class Splash extends Component {
                     <button className="splash"
                     id='signInButton' onClick={this.handleSignIn}>Log in</button>
                 </main>
+                <Footer />
             </div>
         )
     }

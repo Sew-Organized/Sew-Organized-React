@@ -1,41 +1,32 @@
 body {
-    font-family: 'Nothing You Could Do';
+    font-family: 'Open Sans';
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     left: 40px;
-    background-image: url('./rainbow_floss_top.jpg');
-}
-
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-}
-
-header h1 {
-    font-size: 48px;
-    color: #FFF;
-    text-shadow: 2px 2px #000;
-    text-align: center;
-}
-
-p {
-    font-family: "Open Sans";
+    background-image: url('/rainbow_floss_top.jpg');
 }
 
 a {
     text-decoration: none;
- }
+}
+
+ul {
+    padding: 0;
+}
 
 button, a, i {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: rgba(93, 51, 86, .7);
-    color: rgb(181, 212, 147);
+button {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;    
+    background-color: rgb(202,92,188);
+    color: #FFF;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 button:disabled {
@@ -44,108 +35,12 @@ button:disabled {
     cursor: default;
 }
 
-i.fas.fa-trash-alt {
-    color: rgb(93, 51, 86);
-    margin-left: 15px;
-}
-
-button {
-    padding: 8px 10px;
-    border: none;
-    border-radius: 5px;    
-    background-color: #F95C5E;
-    color: #FFF;
-    font-weight: bold;
-    font-size: 12px;
-}
-
-/* Header Section */
-.header {
-    color: #FFF;
-    margin-left: 1.5em;
-}
-
-/* Splash Section */
-.splashLinks {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#splashContainer {
-    text-align: center;
-    margin-top: 150px;
-    margin-right: 80px;
-    margin-left: 80px;
-    padding: 20px;
-    border: white 5px solid; 
-    background-color: rgba(82, 85, 63, 0.671);
-}
-
-/* LogIn Section */
-.logInDiv {
-    text-align: center;
-}
-
-/* Floss Section */
-.hexContainer {
-    width: 100px;
-    height: 100px; 
-}
-
-ul {
-    padding: 0;
-}
-
-.flossContainer {
-    display: flex;
-    flex-flow: row wrap;
-    /* justify-content: space-around; */
-}
-
-.flossBox {
-    background-color: rgba(255, 255, 255, 0.9);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    list-style-type: none;
-    width: 170px;
-    height: 260px;
-    margin: 20px 10px;
-    padding: 20px 10px;
-    color: #333333;
-    border-radius: 10px;
-}
-
-.flossBox h3 {
-    margin: 0;
-    text-align: center;
-    color: #333333;
-    font-size: 22px;
-}
-
-.flossBox h4 {
-    margin: 0;
-    font-family: 'Open Sans';
-    font-size: 14px;
-}
-
-select {
-    margin: 5px;
-  }
-
 .componentContainer {
     margin-left: 100px;
     margin-right: 40px;
     position: relative;
     min-height: 100vh;
 }
-
-#ownedText {
-    font-family: 'Open Sans';
-}
-
-/* Palettes Section */
 
 .centered {
     text-align: center;
@@ -202,7 +97,6 @@ div.palette div.flossContainer li {
 } 
 
 /* Pallete Generator */
-
 .generator {
     background-color: rgba(255, 255, 255, 0.769);
     color: rgb(93, 51, 86);
@@ -239,6 +133,50 @@ div.detailFlossContainer {
     margin-top: 45px;
 }
 
-.searchInput {
-    margin: 5px;
+@media only screen and (max-width: 534px) {
+    nav {
+        display: none;
+    }
+
+    .componentContainer {
+        margin: 0 auto;
+        width: 95%
+    }
+    
+    h1.splash {
+        font-size: 24px;
+    }
+
+    header h1 {
+        margin-top: 75px;
+        font-size: 30px;
+    }
+
+    .flossBox {
+        width: 132px;
+        height: 250px;
+    }
+
+    .flossBox h3 {
+        font-size: 14px;
+    }
+
+    .flossBox h4, #ownedText {
+        font-size: 10px;
+    }
+
+    select {
+        font-size: 10px;
+        width: 40px;
+    }
+
+    .hexContainer {
+        width: 75px;
+        height: 75px;
+    }
+
+    .primary {
+        width: 50px;
+        font-size: 8px;
+    }
 }

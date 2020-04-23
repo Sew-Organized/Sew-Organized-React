@@ -4,6 +4,7 @@ import Nav from './Nav.js';
 import Header from './Header.js'
 import SearchBar from './SearchBar';
 import { getColors, getUserStash, getColorById, getColorsByName } from './utils/API-services';
+import ResponsiveDrawer from './Drawer.js';
 
 export default class Colors extends Component {
     // state for the array of flosses to be posted to page
@@ -61,6 +62,7 @@ export default class Colors extends Component {
         return (  
             <div className="componentContainer">
                 <Header header={header} />
+                <ResponsiveDrawer />
                 <Nav />
                 <SearchBar handleIdChange={this.handleIdChange} handleIdSearch={this.handleIdSearch} handleNameChange={this.handleNameChange} handleNameSearch={this.handleNameSearch} />
                 <List handleClick={this.setStash} flosses={this.state.flosses} stashedFlosses={this.state.stashed} />

@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
-import { createStash, updateFlossInStash, removeFromStash } from './utils/API-services'
+import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { createStash, updateFlossInStash, removeFromStash } from './utils/API-services';
+import './Floss.css';
 
 export default withRouter(class Floss extends Component {
     state = {
@@ -69,7 +70,7 @@ export default withRouter(class Floss extends Component {
                     </div>
                     
                 { this.props.location.pathname === '/stash'
-                    ?   <label id='ownedText' for='owned'>Skeins Owned: 
+                    ?   <label id='ownedText' htmlFor='owned'>Skeins Owned: 
                             <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
         
                                 <option value='0'> 0 </option>
@@ -90,7 +91,7 @@ export default withRouter(class Floss extends Component {
                     }
                 { this.props.location.pathname === '/stash'
                     ?   <div>
-                            <button className="primary" onClick={ this.handleUpdateStash }> Update Stash</button>
+                            <button className="primary" onClick={ this.handleUpdateStash }> Update</button>
                             <i className="fas fa-trash-alt" value={this.props.floss.id} onClick={ this.handleDeleteFromStash }></i>
 
                         </div>

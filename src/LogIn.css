@@ -3,12 +3,30 @@
     background: rgba(255, 255, 255, 0.671);
     text-align: center;
     width: 280px;
-    margin: 150px auto;
     padding: 20px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-200px;
+    margin-top:-200px;
+}
+
+/* LogIn Section */
+.logInDiv {
+    text-align: center;
 }
 
 .logInDiv h3 {
+    font-family: 'Nothing You Could Do', sans-serif;
     font-size: 33px;
+}
+
+.logInDiv .error {
+    background: rgb(255, 207, 201);
+    border: 1px solid red;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px
 }
 
 .signUpButton, .logInButton {

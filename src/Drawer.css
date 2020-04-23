@@ -1,0 +1,42 @@
+#drawer {
+  display: none;
+}
+
+@media only screen and (max-width: 534px) {
+  #drawer {
+    display: flex;
+    height: 0;
+  }
+  
+  .MuiAppBar-colorPrimary {
+    background: url('./sidenav_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  .MuiTypography-h6 {
+    font-family: 'Open Sans', sans-serif!important;
+    font-size: 24px!important;
+    font-weight: 700;
+    color: #FFF;
+  }
+
+  .MuiPaper-root {
+    background: url('./sidenav_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .MuiPaper-root a{
+    color: grey;
+    text-decoration: none;
+  }
+
+  .MuiListItem-root {
+    color: #000;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 1px 1px #FFF;
+  }
+}

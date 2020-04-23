@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Header from './Header.js';
+import Footer from './Footer.js';
 import './About.css';
 
 export default class About extends Component {
     render() {
         const header = "About the Developers";
         return (
-            <div className="componentContainer">
+            <div className="aboutComponent">
                 <Header header={header} />
                 <div className='aboutDiv'>
                     {/* <h2 id='aboutDevs' textAlign='center'>About the Developers</h2> */}
@@ -92,6 +93,7 @@ export default class About extends Component {
                         </div>
                     </ul>
                 </div>
+                <Footer/>
             </div>
         )
     }

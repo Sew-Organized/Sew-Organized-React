@@ -14,7 +14,6 @@ import Colors from './Colors.js';
 import Palettes from './Palettes.js';
 import SavedPalettes from './SavedPalettes.js';
 import Detail from './Detail.js';
-import Footer from './Footer.js';
 
 const isLoggedIn = () => JSON.parse(localStorage.getItem('user'));
 
@@ -22,25 +21,24 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Router>
         
+        <Router>
           <Switch>
             <Route exact path='/' render={() => 
               isLoggedIn()
                 ? <Redirect to='/stash' />
                 : <Redirect to='/splash' />
             } />
-            <Route path='/splash' component={Splash} />
-            <Route path='/about' component={About} />
-            <Route path='/signup' component={SignUp} />
-            <Route path='/login' component={LogIn} />
-            <Route path='/colors' component={Colors} />
+            <Route exact path='/splash' component={Splash} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/signup' component={SignUp} />
+            <Route exact path='/login' component={LogIn} />
+            <Route exact path='/colors' component={Colors} />
             <Route exact path="/detail/:id" component={Detail} />
-            <Route path='/stash' component={Stash} />
-            <Route path='/mypalettes' component={SavedPalettes} />
-            <Route path='/palettes' component={Palettes} />
+            <Route exact path='/stash' component={Stash} />
+            <Route exact path='/mypalettes' component={SavedPalettes} />
+            <Route exact path='/palettes' component={Palettes} />
           </Switch>
-          <Footer/>
         </Router>
       </div>
     )

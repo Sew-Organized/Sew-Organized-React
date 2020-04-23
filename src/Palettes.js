@@ -3,6 +3,7 @@ import RandomPalette from './RandomPalette.js';
 import Nav from './Nav.js';
 import Header from './Header.js';
 import { getPalettes, getColors, getColorScheme } from './utils/API-services.js';
+import ResponsiveDrawer from './Drawer.js';
 
 export default class Palettes extends Component {
     state = {
@@ -92,6 +93,7 @@ export default class Palettes extends Component {
         return (
             <div className="componentContainer">
                 <Header header={header} />
+                <ResponsiveDrawer />
                 <Nav />
                 <div id="generatorContainer">
                 <div className='generator'>
