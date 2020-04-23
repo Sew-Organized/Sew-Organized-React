@@ -3,8 +3,8 @@ import List from './List.js';
 import Nav from './Nav.js';
 import Header from './Header.js'
 import SearchBar from './SearchBar';
-import { getColors, getUserStash, getColorById, getColorsByName } from './utils/API-services';
 import ResponsiveDrawer from './Drawer.js';
+import { getColors, getUserStash, getColorById, getColorsByName } from './utils/API-services';
 
 export default class Colors extends Component {
     // state for the array of flosses to be posted to page
