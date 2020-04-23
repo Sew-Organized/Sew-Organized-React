@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import { createStash, updateFlossInStash, removeFromStash } from './utils/API-services'
+import { addFlossToStash, updateFlossInStash, removeFromStash } from './utils/API-services'
 
 export default withRouter(class Floss extends Component {
     state = {
@@ -15,7 +15,7 @@ export default withRouter(class Floss extends Component {
         };
         this.props.setStash(myStash);
         this.refs.btn.setAttribute('disabled', 'disabled');
-        await createStash(this.state.quantityInput, this.props.floss.id);  
+        await addFlossToStash(this.state.quantityInput, this.props.floss.id);  
     }
 
     handleUpdateStash = async (e) => {
@@ -105,9 +105,6 @@ export default withRouter(class Floss extends Component {
                             : false } 
                             >Stash</button>
                     : this.props.location.pathname === '/detail/:id'
-                    
-                        
-
                 }
                 </li>
             </div>
