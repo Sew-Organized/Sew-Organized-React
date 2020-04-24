@@ -72,17 +72,34 @@ p.splash {
     margin: 15px;
 }
 
+#splashMobile {
+    display: none;
+}
+
 @media (max-width: 500px) {
     h1.splash {
-        font-size: 36px;
+        font-size: 50px;
     }
 
     main {
-        margin-top: 250px;
+        margin-top: 135px;
     }
 
-    p.splash {
-        font-size: 18px;
+    .splashDescription {
+        width: 85%;
+    }
+
+    .splashDescription p {
+        display: none;
+    }
+
+    #splashMobile {
+        display: block;
+        font-size: 20px;
+    }
+
+    button.splash {
+        margin: 10px;
     }
 }
 

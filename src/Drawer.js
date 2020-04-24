@@ -49,24 +49,26 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default withRouter(function ResponsiveDrawer() {
-  const navLinks = [{link: '/stash', displayText: 'My Stash'}, {link: '/colors', displayText: 'All Colors'}, {link: '/mypalettes', displayText: 'My Palettes'}, {link: '/palettes', displayText: 'Generate Palette'}]
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-function handleDrawerToggle() {
+  function handleDrawerToggle() {
     setMobileOpen(!mobileOpen)
   }
-const drawer = (
+
+  const drawer = (
     <div>
       <List>
           <Link to="/colors"><ListItem>All Colors</ListItem></Link>
           <Link to="/stash"><ListItem>My Stash</ListItem></Link>
           <Link to="/mypalettes"><ListItem>My Palettes</ListItem></Link>
           <Link to="/palettes"><ListItem>Palette Generator</ListItem></Link>
+          <Link to="/splash"><ListItem>Log Out</ListItem></Link>
       </List>
     </div>
   );
-return (
+
+  return (
     <div className={classes.root} id="drawer">
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
