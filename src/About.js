@@ -15,7 +15,7 @@ export default class About extends Component {
                         <div className="devBox">
                             <li className='aboutLI' id='aboutChelsea'>
                                 <img src="chelsea.jpeg" alt='chelsea' height="200" width="200" />
-                                <h3>Chelsea Spangler</h3>
+                                <h3 className="fancy">Chelsea Spangler</h3>
                                 <p>Chelsea loves to code, knit, crochet, make dumb jokes, and invent cocktails.</p>
                                 <div className="social-media-links">
                                     <a href="https://www.linkedin.com/in/chelseanspangler/" target="_blank" rel="noopener noreferrer">
@@ -31,7 +31,7 @@ export default class About extends Component {
                         <div className="devBox">
                             <li className='aboutLI' id='aboutDakota'>
                                 <img src="dakota.jpeg" alt='dakota' height="200" width="200"></img>
-                                <h3>Dakota Druley</h3>
+                                <h3 className="fancy">Dakota Druley</h3>
                                 <p>Dakota is a creative problem solver who dances, paints, and attempts to amuse those around her.</p>
                                 <div className="social-media-links">
                                     <a href="https://www.linkedin.com/in/dakota-druley/" target="_blank" rel="noopener noreferrer">
@@ -47,7 +47,7 @@ export default class About extends Component {
                         <div className="devBox">
                             <li className='aboutLI' id='aboutDannie'>
                                 <img src="dannie.jpeg" alt='dannie' height="200" width="200" />
-                                <h3>Dannie Schumaker</h3>
+                                <h3 className="fancy">Dannie Schumaker</h3>
                                 <p>Dannie makes beautiful and useful things with needles, hooks, words and code. </p>
                                 <div className="social-media-links">
                                     <a href="https://www.linkedin.com/in/dannieschumaker/" target="_blank" rel="noopener noreferrer">
@@ -63,7 +63,7 @@ export default class About extends Component {
                         <div className="devBox">
                             <li className='aboutLI' id='aboutJanelle'>  
                                 <img src="janelle.jpeg" alt='janelle' height="200" width="200" />
-                                <h3>Janelle Mellor</h3>
+                                <h3 className="fancy">Janelle Mellor</h3>
                                 <p>Janelle is an avid hiker, kombucha brewer, and sourdough baker.</p>
                                 <div className="social-media-links">
                                     <a href="https://www.linkedin.com/in/janellemellor/" target="_blank" rel="noopener noreferrer">
@@ -79,7 +79,7 @@ export default class About extends Component {
                         <div className="devBox">
                             <li className='aboutLI' id='aboutJenna'>
                                 <img src="jenna.jpeg" alt='jenna' height="200" width="200" />
-                                <h3>Jenna Goldman</h3>
+                                <h3 className="fancy">Jenna Goldman</h3>
                                 <p>Jenna is a full-stack developer who also loves crafting, baking, and looking at cute animal videos on the internet.</p>
                                 <div className="social-media-links">
                                     <a href="https://www.linkedin.com/in/jennagoldman/" target="_blank" rel="noopener noreferrer"className="linked" >

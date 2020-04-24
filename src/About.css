@@ -1,5 +1,9 @@
 /* About Devs Section */
 
+.aboutComponent {
+  position: relative;
+}
+
 .aboutDiv {
   width: 100%;
   margin: 0 auto;
@@ -9,6 +13,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 0;
 }
 
 .aboutLI {
@@ -25,6 +30,10 @@
 
 .aboutLI img {
   border-radius: 50%;
+}
+
+.fancy {
+  font-family: 'Nothing You Could Do';
 }
 
 #aboutChelsea {
@@ -59,6 +68,7 @@
 
 #aboutJenna {
   color: #0EC9CC;
+  margin-bottom: 75px;
 }
 
 #aboutJenna p {
