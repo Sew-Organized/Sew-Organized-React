@@ -4,6 +4,7 @@ import Nav from './Nav.js';
 import Header from './Header.js';
 import ResponsiveDrawer from './Drawer.js';
 import { getPalettes } from './utils/API-services.js';
+import './SavedPalettes.css';
 
 export default class SavedPalettes extends Component {
     state = {

@@ -49,30 +49,42 @@ export default withRouter(class Floss extends Component {
 
         return (
             <div className="flossContainer">
-                <li className='flossBox'>
-                    <Link to=
-                        {
-                            this.props.location.pathname === '/stash'
-                                ? `detail/${dmc_id}`
-                                : `detail/${floss.id}`
-                        }
-                    key={`link_${dmc_id}`}>
-                    <h3>{ description }</h3>
-                    </Link>
+                <li className={
+                            this.props.location.pathname === '/stash' || this.props.location.pathname === '/colors'
+                                ? 'flossBox'
+                                : 'paletteFlossBox'
+                        }>
+                    {
+                        this.props.location.pathname === '/colors' || this.props.location.pathname === '/stash'
+                            ? <Link to={
+                                    this.props.location.pathname === '/stash'
+                                        ? `detail/${dmc_id}`
+                                        : `detail/${floss.id}`
+                                }
+                                key={`link_${dmc_id}`}>
+                                <h3>{ description }</h3>
+                            </Link>
+                            : ''
+                    }
+
                     <h4>{ 
-                            this.props.location.pathname === '/stash'
-                                ? dmc_id
-                                : floss.id
+                        this.props.location.pathname === '/stash'
+                            ? dmc_id
+                            : floss.id
                         }
                     </h4>
                     <div>
-                        <div className='hexContainer' style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 
+                        <div className={
+                            this.props.location.pathname === '/stash' || this.props.location.pathname === '/colors'
+                                ? 'hexContainer'
+                                : 'paletteHexContainer'
+                        } style={{backgroundColor: `#${hex}`, border: `#${hex}`}}></div> 
                     </div>
-                    
-                { this.props.location.pathname === '/stash'
-                    ?   <label id='ownedText' htmlFor='owned'>Skeins Owned: 
-                            <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
-        
+                
+                    { this.props.location.pathname === '/stash'
+                        ?   <label id='ownedText' htmlFor='owned'>Skeins Owned: 
+                                <select id='owned' value={this.state.quantityInput} onChange={(e) => this.setState({ quantityInput: e.target.value})}>
+    
                                 <option value='0'> 0 </option>
                                 <option value='0.5'> 0.5 </option>
                                 <option value='1'> 1 </option>
@@ -87,29 +99,24 @@ export default withRouter(class Floss extends Component {
                                 <option value='6'> 5+ </option>
                             </select>
                         </label>
-                    : ''
+                        : ''
                     }
-                { this.props.location.pathname === '/stash'
-                    ?   <div>
+                    { this.props.location.pathname === '/stash'
+                        ?   <div>
                             <button className="primary" onClick={ this.handleUpdateStash }> Update</button>
                             <i className="fas fa-trash-alt" value={this.props.floss.id} onClick={ this.handleDeleteFromStash }></i>
-
                         </div>
-                    : this.props.location.pathname === '/colors'   
+                        : this.props.location.pathname === '/colors'
 
                         ? <button className="primary"
                             onClick={ this.handleAddStash } 
                             ref="btn"
-                
                             disabled={this.findById(this.props.stashedFlosses, this.props.floss.id) 
-                            ? true
-                            : false } 
+                                ? true
+                                : false } 
                             >Stash</button>
-                    : this.props.location.pathname === '/detail/:id'
-                    
-                        
-
-                }
+                        : this.props.location.pathname === '/detail/:id'
+                    }
                 </li>
             </div>
         )

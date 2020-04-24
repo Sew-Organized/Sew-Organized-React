@@ -17,14 +17,30 @@
   padding: 20px 10px;
   color: #333333;
   border-radius: 10px;
+  position: relative;
+}
+
+.paletteFlossBox {
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  list-style-type: none;
+  margin: 3px 3px;
+  color: #333333;
+  border-radius: 2px;
+  position: relative;
+  width: 100px;
+  height: 210px;
 }
 
 .flossBox h3 {
-  margin: 0;
   text-align: center;
   color: #333333;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Nothing You Could Do', sans-serif;
+  margin-bottom: 5px;
 }
 
 .flossBox h4 {
@@ -33,13 +49,17 @@
   font-size: 14px;
 }
 
+.smallFlossBox h4 {
+  margin: 0;
+}
+
 select {
   margin: 5px;
 }
 
 #ownedText {
-  font-family: 'Open Sans';
-  font-size: 12px;
+    font-family: 'Open Sans';
+    font-size: 12px;
 }
 
 i.fas.fa-trash-alt {
@@ -50,5 +70,50 @@ i.fas.fa-trash-alt {
 .hexContainer {
   width: 100px;
   height: 100px; 
-  margin: 10px 0;
+  margin: 5px auto;
+}
+
+.paletteHexContainer {
+  width: 100px;
+  height: 100px; 
+  margin: 5px auto;
+}
+
+.flossBody {
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 75px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 534px) {
+  div.paletteContainer {
+    padding: 5px;
+  }
+
+  .paletteFlossBox {
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+    margin: 3px 3px;
+    color: #333333;
+    border-radius: 2px;
+    position: relative;
+    width: 60px;
+    height: 90px;
+  }
+
+  .paletteFlossBox h4 {
+    margin: 5px;
+  }
+
+  .paletteHexContainer {
+    width: 40px;
+    height: 40px;
+    margin: 2px auto;
+  }
 }
