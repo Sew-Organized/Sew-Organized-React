@@ -3,6 +3,7 @@ import List from './List.js';
 import Nav from './Nav.js';
 import Header from './Header.js';
 import { getUserStash } from './utils/API-services.js';
+import ResponsiveDrawer from './Drawer.js';
 
 export default class Stash extends Component {
 state = {
@@ -21,14 +22,14 @@ deleteFlossFromState = (id) => {
         stashed: state.stashed.filter(floss => floss.id !== id)
     }))
 }
-
-render() {
-    const header = "My Stash";
-    return (
-        <div className="componentContainer">
-            <Header header={header} />
-            <Nav />
-            <List flosses={this.state.stashed} deleteFlossFromState={this.deleteFlossFromState} /> 
-        </div>
-    )
-}}
+    render() {
+        const header = "My Stash";
+        return (
+            <div className="componentContainer">
+                <Header header={header} />
+                <ResponsiveDrawer />
+                <Nav />
+                <List flosses={this.state.stashed} deleteFlossFromState={this.deleteFlossFromState} /> 
+            </div>
+        )
+    }}

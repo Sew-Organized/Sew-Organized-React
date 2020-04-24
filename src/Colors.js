@@ -3,6 +3,7 @@ import List from './List.js';
 import Nav from './Nav.js';
 import Header from './Header.js'
 import SearchBar from './SearchBar';
+import ResponsiveDrawer from './Drawer.js';
 import { getColors, getUserStash, getColorById, getColorsByName, addFlossToStash } from './utils/API-services';
 
 export default class Colors extends Component {
@@ -62,6 +63,7 @@ export default class Colors extends Component {
         return (  
             <div className="componentContainer">
                 <Header header={header} />
+                <ResponsiveDrawer />
                 <Nav />
                 <SearchBar handleIdChange={this.handleIdChange} handleIdSearch={this.handleIdSearch} handleNameChange={this.handleNameChange} handleNameSearch={this.handleNameSearch} />
                 <List handleClick={this.setStash} flosses={this.state.flosses} stashedFlosses={this.state.stashed} />

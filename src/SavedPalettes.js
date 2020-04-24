@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Floss from './Floss.js';
 import Nav from './Nav.js';
 import Header from './Header.js';
+import ResponsiveDrawer from './Drawer.js';
 import { getPalettes } from './utils/API-services.js';
+import './SavedPalettes.css';
 
 export default class SavedPalettes extends Component {
     state = {
@@ -21,6 +23,7 @@ export default class SavedPalettes extends Component {
         return(
             <div className="componentContainer">
                 <Header header={header} />
+                <ResponsiveDrawer />
                 <Nav />
                 <div className="palettesContainer">
                 {

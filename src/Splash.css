@@ -1,66 +1,88 @@
-body {
-    font-family: 'Nothing You Could Do';
-    /* background-image: url('./flossOption_5.jpg'); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: white;
-}
-
 main {
     text-align: center;
-    margin-top: 200px;
-    margin-right: 300px;
-    margin-left: 200px;
+    margin-top: 300px;
     padding: 20px;
     border: none; 
-    background-color: rgba(255, 255, 255, 0.671);
 }
 
 h1.splash {
-    color: #333;
+    color: #000;
+    font-size: 80px;
+    font-weight: bolder;
+    padding-top: 5px;
+    margin: 20px;
+    font-family: 'Nothing You Could Do';
+}
+
+.splashDescription {
+    width: 75%;
+    margin: 0 auto;
+}
+
+p.splash {
+    color: #000;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+ button.splash {
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+#signUpButton {
+    background-color: rgb(202,92,188);
+}
+
+#signUpButton:hover {
+    box-shadow: 3px 3px #000;
+}
+
+#signInButton {
+    background-color: #FFF;
+    border: 1px solid rgb(202,92,188);
+    color: rgb(202,92,188)
+}
+
+#signInButton:hover {
+    box-shadow: 3px 3px rgb(202,92,188);
+}
+
+#splashHeader {
     font-size: 90px;
     font-weight: bolder;
     padding-top: 5px;
     margin: 20px;
 }
 
-p.splash {
-    color: #333;
-    font-family: 'Open Sans';
+#splashText {
     font-size: 30px;
     margin-right: 50px;
     margin-left: 50px;
 }
 
- button.splash {
-    font-family: 'Shadows Into Light', cursive;
+#splashButton {
     font-size: 30px;
-    font-weight: bold;
-    color: white;
-    background-color: #C79682;
+    background-color: #DEDCD0;
     padding: 10px;
     margin: 15px;
-    cursor: pointer;
 }
 
-#signUpButton {
-    color:  rgb(174, 207, 138);
-    background-color: #5D3356;
-}
+@media (max-width: 500px) {
+    h1.splash {
+        font-size: 36px;
+    }
 
-#signInButton {
-    color: #5D3356;
-    background-color: rgb(174, 207, 138);
-}
+    main {
+        margin-top: 250px;
+    }
 
-#signUpButton:hover {
-    background-color:rgb(181, 212, 147);
-    color: rgba(93, 51, 86, .7);
-}
-
-#signInButton:hover {
-    background-color:rgba(93, 51, 86, .7);
-    color:rgb(181, 212, 147);
+    p.splash {
+        font-size: 18px;
+    }
 }
 

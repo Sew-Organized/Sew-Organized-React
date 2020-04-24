@@ -7,7 +7,9 @@
     z-index: 1006;
     min-width: 64px;
     /* background: rgb(169, 213, 122); */
-    background-color: #5D3356;
+    background: url('/sidenav_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     -webkit-transition: min-width 0.2s;
     -moz-transition: min-width 0.2s;
     -o-transition: min-width 0.2s;
@@ -99,7 +101,7 @@
     color: #fff;
   }
   .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47 > .sidenav---navitem---9uL5T {
-    color: #f9dcdd;
+    color: #FFF;
     padding: 0 14px 0 20px;
     line-height: 28px;
   }
@@ -346,6 +348,10 @@
     -webkit-box-sizing: inherit;
     -moz-box-sizing: inherit;
     box-sizing: inherit;
+  }
+
+  i {
+    color: #333;
   }
   
   /*# sourceMappingURL=react-sidenav.css.map*/

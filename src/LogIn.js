@@ -23,7 +23,7 @@ export default class LogIn extends Component {
     render() {
         return (
             <div className='logInDiv'>
-                <h3>Log In:</h3>
+                <h3>Log in to Sew Organized</h3>
                 { this.state.error ? <h3 class="error">{this.state.error}</h3> : null }
                 <form>
                 <input 

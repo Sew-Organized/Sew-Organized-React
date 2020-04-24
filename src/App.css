@@ -1,46 +1,32 @@
-
-/* Body Section */
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 60px;
-}
-
-header h1 {
-    font-size: 4em;
-}
-
-.logo {
-    color: rgb(235, 210, 229);
-}
-
-p {
-    font-family: "Open Sans";
-}
-
 body {
+    font-family: 'Open Sans';
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     left: 40px;
-    background: linear-gradient( rgba(108, 85, 146, .4), rgba(108, 85, 146, .4)), url('./flossOption_5.jpg');
-    color: #A18982;
+    background-image: url('/rainbow_floss_top.jpg');
 }
 
 a {
     text-decoration: none;
 }
 
+ul {
+    padding: 0;
+}
+
 button, a, i {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: rgba(93, 51, 86, .7);
-    color: rgb(181, 212, 147);
-}
-
-button:active {
-    background-color: rgba(49, 28, 46, 0.931);
-    color: rgb(205, 218, 191);
+button {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;    
+    background-color: rgb(202,92,188);
+    color: #FFF;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 button:disabled {
@@ -49,234 +35,15 @@ button:disabled {
     cursor: default;
 }
 
-i.fas.fa-trash-alt {
-    color: rgb(93, 51, 86);
-    margin-left: 15px;
-}
-
-button {
-    padding: 8px 10px;
-    border: none;
-    border-radius: 5px;    
-    background-color: rgb(174, 207, 138);
-    color: #5D3356;
-    font-weight: bold;
-    font-size: 12px;
-}
-
-/* Header Section */
-.header {
-    color: #FFF;
-    margin-left: 1.5em;
-}
-
-/* Splash Section */
-.splashLinks {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#splashContainer {
-    text-align: center;
-    margin-top: 150px;
-    margin-right: 80px;
-    margin-left: 80px;
-    padding: 20px;
-    border: white 5px solid; 
-    background-color: rgba(82, 85, 63, 0.671);
-}
-
-#splashHeader {
-    font-size: 90px;
-    font-weight: bolder;
-    padding-top: 5px;
-    margin: 20px;
-}
-
-#splashText {
-    font-size: 30px;
-    margin-right: 50px;
-    margin-left: 50px;
-}
-
-#splashButton {
-    font-size: 30px;
-    background-color: #DEDCD0;
-    padding: 10px;
-    margin: 15px;
-}
-
-.splashLinks a {
-    font-size: 40px;
-    color: white;
-    background-color: rgba(82, 85, 63, 0.671);
-}
-
-
-/* LogIn Section */
-.logInDiv {
-    text-align: center;
-}
-
-.error {
-    background-color: rgb(160, 18, 18);
-}
-
-/* About Devs Section */
-.aboutUL {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.aboutLI {
-    margin: 0.50em;
-    padding: 0.50em;
-    padding-top: 1.25em;
-    height: 250px;
-    width: 200px;
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(74, 87, 79);
-    text-shadow: 2px 0px  rgb(143, 168, 153);
-}
-
-.aboutText {
-    word-wrap: wrap;
-    height: 200px;
-    width: 200px;
-    font-size: 20px;
-    margin: 0.50em;
-    padding: 0.50em;
-    background-color:rgba(93, 51, 86, 0.755);
-}
-
-#aboutDevs {
-    margin-left: 2em;
-    font-style: italic;
-}
-
-#aboutChelsea {
-    background-color: #FF6224;
-}
-
-#aboutDannie {
-    background-color: #A7AE38;
-}
-
-#aboutJenna {
-    background-color: #CBFFE5;
-}
-
-#aboutJanelle {
-    background-color: #A18982;
-}
-
-#aboutDakota {
-    background-color: rgb(138, 19, 91);
-}
-
-.social-media-links {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    width: 30%;
-    margin-left: 35%;
-}
-
-.linked {
-    margin-right: 4px;
-}
-
-/* Floss Section */
-.hexContainer {
-    width: 100px;
-    height: 100px; 
-}
-
-ul {
-    padding: 0;
-}
-
-.flossContainer {
-    display: flex;
-    flex-flow: row wrap;
-    /* background-color: white; */
-    border-radius: 15px;
-    /* justify-content: space-around; */
-}
-
-.flossBox {
-    background-color: rgba(255, 255, 255, 0.9);
-    /* border: 2px solid rgb(170, 126, 149); */
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    list-style-type: none;
-    width: 170px;
-    height: 260px;
-    margin: 20px 10px;
-    padding: 20px 10px;
-    color: #333333;
-    border-radius: 10px;
-}
-
-.flossBox h3 {
-    margin: 0;
-    text-align: center;
-    color: #333333;
-    font-size: 22px;
-}
-
-.flossBox h4 {
-    margin: 0;
-    font-family: 'Open Sans';
-    font-size: 14px;
-}
-
-select {
-    margin: 5px;
-}
-
 .componentContainer {
     margin-left: 100px;
     margin-right: 40px;
+    position: relative;
+    min-height: 100vh;
 }
-
-#ownedText {
-    font-family: 'Open Sans';
-}
-
-/* Palettes Section */
 
 .centered {
     text-align: center;
-}
-
-div.palette {
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-    margin-bottom: 20px;
-}
-
-div.paletteContainer {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(93, 51, 86, 0.755);
-    margin-bottom: 5em;
-    padding: 3em;
-    max-width: 1500px;
-    justify-content: center;
-    align-content: center;
-}
-
-.paletteContainer h2 {
-    margin-left: 40px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 30px;
 }
 
 div.flexRightAlign {
@@ -291,38 +58,7 @@ div.flexRightAlign input {
     width: 150px;
     margin-right: 20px;
     padding-left: 5px;
-}
-
-div.palette div.flossContainer li {
-    height: 210px;
-}
-
-.palettesContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 } 
-
-/* Pallete Generator */
-
-.generator {
-    background-color: rgba(255, 255, 255, 0.769);
-    color: rgb(93, 51, 86);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 20px;
-    margin: 1em;
-    padding: 1em;
-    max-width: 1500px;
-}
-
-#generatorContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 div.detailFloss li {
     height: 210px;
@@ -340,4 +76,52 @@ div.detailFlossContainer {
     justify-content: space-around;
     align-items: center;
     margin-top: 45px;
+}
+
+@media only screen and (max-width: 534px) {
+    nav {
+        display: none;
+    }
+
+    .componentContainer {
+        margin: 0 auto;
+        width: 95%
+    }
+    
+    h1.splash {
+        font-size: 24px;
+    }
+
+    header h1 {
+        margin-top: 75px;
+        font-size: 30px;
+    }
+
+    .flossBox {
+        width: 132px;
+        height: 250px;
+    }
+
+    .flossBox h3 {
+        font-size: 14px;
+    }
+
+    .flossBox h4, #ownedText {
+        font-size: 10px;
+    }
+
+    select {
+        font-size: 10px;
+        width: 40px;
+    }
+
+    .hexContainer {
+        width: 75px;
+        height: 75px;
+    }
+
+    .primary {
+        width: 50px;
+        font-size: 8px;
+    }
 }
