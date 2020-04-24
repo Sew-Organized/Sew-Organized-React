@@ -8,6 +8,7 @@ export default class List extends Component {
                 <ul className='flossContainer'>
                 { this.props.flosses.map(floss => 
                     <Floss 
+                        key={floss.id}
                         floss={floss} 
                         setStash={this.props.handleClick} 
                         deleteFlossFromState={this.props.deleteFlossFromState} 

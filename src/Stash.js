@@ -10,26 +10,18 @@ state = {
     stashed: []
 }
 
-    async componentDidMount() {
-        const data = await getUserStash();
-        this.setState({
-            stashed: data.body
-        })
-    }
-    
-    deleteFlossFromState = (e) => {
-        e.preventDefault();
-        const flossToDelete = e.target.value;
-        const stash = [...this.state.stashed];
-        stash.splice(stash.findIndex(floss => {
-            return floss.id === flossToDelete
-        }), 1)
+async componentDidMount() {
+    const data = await getUserStash();
+    this.setState({
+        stashed: data.body
+    })
+}
 
-        this.setState({
-            stashed: stash
-        })
-    }
-
+deleteFlossFromState = (id) => {
+    this.setState(state => ({
+        stashed: state.stashed.filter(floss => floss.id !== id)
+    }))
+}
     render() {
         const header = "My Stash";
         return (

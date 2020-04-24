@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { createStash, updateFlossInStash, removeFromStash } from './utils/API-services';
+import { updateFlossInStash, removeFromStash } from './utils/API-services';
 import './Floss.css';
 
 export default withRouter(class Floss extends Component {
@@ -16,7 +16,6 @@ export default withRouter(class Floss extends Component {
         };
         this.props.setStash(myStash);
         this.refs.btn.setAttribute('disabled', 'disabled');
-        await createStash(this.state.quantityInput, this.props.floss.id);  
     }
 
     handleUpdateStash = async (e) => {
@@ -26,18 +25,18 @@ export default withRouter(class Floss extends Component {
 
     handleDeleteFromStash = async (e) => {
         e.preventDefault();
-        this.props.deleteFlossFromState(e);
+        this.props.deleteFlossFromState(this.props.floss.id);
         await removeFromStash(this.props.floss.id); 
         };
 
-        findById = (array, id) => {
-            for (let index = 0; index < array.length; index++) {
-                const item = array[index];
-                if (item.dmc_id === id) {
-                    return true;
-                } 
-            }
-        };
+    findById = (array, id) => {
+        for (let index = 0; index < array.length; index++) {
+            const item = array[index];
+            if (item.dmc_id === id) {
+                return true;
+            } 
+        }
+    };
 
     render() {
         const { floss } = this.props;
