@@ -10,8 +10,8 @@ div.paletteContainer {
   flex-direction: column;
   background: rgba(51, 51, 51, 0.75);
   padding: 0 30px;
-  margin-bottom: 5em;
-  max-width: 1500px;
+  margin: 0 auto;
+  max-width: 750px;
   justify-content: center;
   align-content: center;
   border-radius: 10px;
