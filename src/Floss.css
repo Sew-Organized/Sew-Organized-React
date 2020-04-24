@@ -12,9 +12,9 @@
   justify-content: space-around;
   list-style-type: none;
   width: 170px;
-  height: 290px;
+  height: 275px;
   margin: 20px 10px;
-  padding: 20px 10px;
+  padding: 10px;
   color: #333333;
   border-radius: 10px;
   position: relative;
@@ -40,7 +40,13 @@
   color: #333333;
   font-size: 18px;
   font-family: 'Nothing You Could Do', sans-serif;
+  margin-top: 10px;
   margin-bottom: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
 }
 
 .flossBox h4 {
@@ -79,17 +85,27 @@ i.fas.fa-trash-alt {
   margin: 5px auto;
 }
 
-.flossBody {
-  width: 100%;
-  margin: 0 auto;
+.flossBoxContent {
   position: absolute;
   top: 75px;
   text-align: center;
 }
 
+button.addToStash {
+  margin-top: 15px;
+}
+
 @media only screen and (max-width: 534px) {
   div.paletteContainer {
     padding: 5px;
+  }
+
+  div.flexRightAlign {
+    margin: 20px auto;
+  }
+
+  .flossBox {
+    width: 150px;
   }
 
   .paletteFlossBox {
@@ -103,7 +119,7 @@ i.fas.fa-trash-alt {
     color: #333333;
     border-radius: 2px;
     position: relative;
-    width: 60px;
+    width: 55px;
     height: 90px;
   }
 
